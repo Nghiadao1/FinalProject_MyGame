@@ -34,6 +34,11 @@ public class CharacterManager : MonoBehaviour
         get => _characterInfo.attackPoint;
         set => _characterInfo.attackPoint = value;
     }
+    public float distanceJump
+    {
+        get => _characterInfo.distanceJump;
+        set => _characterInfo.distanceJump = value;
+    }
 
     //Stage Character
     public bool isGrounded;
@@ -85,7 +90,7 @@ public class CharacterManager : MonoBehaviour
     private bool CheckIsGrounded()
     {
         //check if the character is on the ground
-        var hit = Physics2D.Raycast(transform.position, Vector2.down, 1.0f);
+        var hit = Physics2D.Raycast(transform.position, Vector2.down, distanceJump);
         return hit.collider != null;
     }
     private void IsGrounded()
@@ -101,4 +106,5 @@ public class CharacterInfo
      public float jumpForce;
      public int health;
      public int attackPoint;
+     public float distanceJump;
 }
