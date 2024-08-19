@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.Serialization;
 
 public class CharacterManager : MonoBehaviour
 {
     //Components
-    private Rigidbody2D _rb;
+    [SerializeField]private Rigidbody2D rb;
+    [SerializeField]private  Collider2D characterCollider2D;
     [SerializeField] private GameObject character;
     private Move _move;
     
@@ -56,7 +58,6 @@ public class CharacterManager : MonoBehaviour
 
     private void Init()
     {
-         _rb = character.GetComponent<Rigidbody2D>();
          _move = character.GetComponent<Move>();
     }
     private void Move()
@@ -83,7 +84,7 @@ public class CharacterManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
-            _move.Jump(jumpForce, _rb, isGrounded);
+            _move.Jump(jumpForce, rb, isGrounded);
         }
     }
 

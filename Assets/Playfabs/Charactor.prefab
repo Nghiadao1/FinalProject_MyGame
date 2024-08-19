@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5050008166181698845}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.653, y: -0.897, z: 0.0608235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27ccccb883f6245c99c6d2e11b239f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 6141175757360351752}
+  characterCollider2D: {fileID: 5364648336367254120}
   character: {fileID: 5050008166181698845}
   _characterInfo:
     speed: 5
