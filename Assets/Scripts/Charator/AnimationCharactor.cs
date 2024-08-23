@@ -1,18 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationCharactor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<GameObject> animationList;
+
+    private void Awake()
     {
-        
+        //CharacterManager.AnimationActive += StartAnimation;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+       // CharacterManager.AnimationActive -= StartAnimation;
+    }
+
+    public void StartAnimation(int index)
+    {
+        // Hide all animation
+        foreach (var anim in animationList)
+        {
+            anim.SetActive(false);
+        }
+        animationList[index].SetActive(true);
     }
 }
