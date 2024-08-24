@@ -3,27 +3,65 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationCharactor : MonoBehaviour
+public class AnimationCharactor : TemporaryMonoSingleton<AnimationCharactor>
 {
-    [SerializeField] private List<GameObject> animationList;
-
-    private void Awake()
+    [SerializeField] private Animator animator;
+    public Stage _stage;
+    public void SetAnimation()
     {
-        //CharacterManager.AnimationActive += StartAnimation;
-    }
-
-    private void OnDestroy()
-    {
-       // CharacterManager.AnimationActive -= StartAnimation;
-    }
-
-    public void StartAnimation(int index)
-    {
-        // Hide all animation
-        foreach (var anim in animationList)
+        if(_stage.IsIdle)
         {
-            anim.SetActive(false);
+            animator.SetBool("IsIdle", true);
+            animator.SetBool("IsRun", false);
+            animator.SetBool("IsJump", false);
+            animator.SetBool("IsAttack", false);
+            animator.SetBool("IsDead", false);
         }
-        animationList[index].SetActive(true);
+        
+        if(_stage.IsDead)
+        {
+            animator.SetBool("IsDead", true);
+            animator.SetBool("IsRun", false);
+            animator.SetBool("IsJump", false);
+            animator.SetBool("IsIdle", false);
+            animator.SetBool("IsAttack", false);
+            
+        }
+        if(_stage.IsRun)
+        {
+            animator.SetBool("IsRun", true);
+            animator.SetBool("IsJump", false);
+            animator.SetBool("IsIdle", false);
+            animator.SetBool("IsAttack", false);
+            animator.SetBool("IsDead", false);
+            
+        }
+        if(_stage.IsJump)
+        {
+            animator.SetBool("IsJump", true);
+            animator.SetBool("IsRun", false);
+            animator.SetBool("IsIdle", false);
+            animator.SetBool("IsAttack", false);
+            animator.SetBool("IsDead", false);
+            
+        }
+        
+        if(_stage.IsAttack)
+        {
+            animator.SetBool("IsAttack", true);
+            animator.SetBool("IsRun", false);
+            animator.SetBool("IsJump", false);
+            animator.SetBool("IsIdle", false);
+            animator.SetBool("IsDead", false);
+        }
+    }
+    private void SetStage(StageState state)
+    {
+        _stage.SetStageState(state);
+    }
+    public void UpdateAnimation(StageState state)
+    {
+        SetStage(state);
+        SetAnimation();
     }
 }
