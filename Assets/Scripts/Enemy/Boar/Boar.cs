@@ -9,7 +9,7 @@ public class Boar : EnemyManager
     [SerializeField] private Transform startPos;
     [SerializeField] private Transform endPos;
     
-    protected override void Move()
+    public override void Move()
     {
         var scale = transform.localScale;
         //move from startPos to endPos by speed and DoTween
@@ -27,6 +27,10 @@ public class Boar : EnemyManager
     
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if(other == CompareTag("Enemy"))
+        {
+            Debug.Log("Enemy");
+        }
         Debug.Log("Character");
     }
 }

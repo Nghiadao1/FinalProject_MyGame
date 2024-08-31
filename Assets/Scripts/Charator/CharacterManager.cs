@@ -144,7 +144,6 @@ public class CharacterManager : MonoBehaviour
             _animationCharactor.UpdateAnimation(StageState.Idle);
         }
     }
-
     
     
 }
