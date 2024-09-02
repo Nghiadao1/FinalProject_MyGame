@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.Serialization;
 
-public class CharacterManager : MonoBehaviour
+public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
 {
     //events
     private AnimationCharactor _animationCharactor => AnimationCharactor.Instance;
@@ -14,7 +14,7 @@ public class CharacterManager : MonoBehaviour
     [SerializeField]private Rigidbody2D rb;
     [SerializeField]private  Collider2D characterCollider2D;
     [SerializeField] private GameObject character;
-    
+    [SerializeField] private GameObject attackHit;
     private Move _move;
     
     //Character info
@@ -119,7 +119,15 @@ public class CharacterManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             _animationCharactor.UpdateAnimation(StageState.Attack);
+            attackHit.SetActive(true);
+            StartCoroutine(AttackCoroutine());
         }
+    }
+    //courotine for attack
+    private IEnumerator AttackCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        attackHit.SetActive(false);
     }
     public void EndAttack()
     {
