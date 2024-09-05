@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 221, y: -48.9}
-  m_SizeDelta: {x: 331.0598, y: 99.198}
+  m_AnchoredPosition: {x: 447.52948, y: -98.046875}
+  m_SizeDelta: {x: 613.7991, y: 154.0396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &71254068
 MonoBehaviour:
@@ -234,8 +234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0883, y: -0.3}
-  m_SizeDelta: {x: 285.4059, y: 30.0246}
+  m_AnchoredPosition: {x: 1.5436, y: -0.000073433}
+  m_SizeDelta: {x: 529.2679, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &215725142
 MonoBehaviour:
@@ -420,6 +420,7 @@ GameObject:
   - component: {fileID: 479299209}
   - component: {fileID: 479299208}
   - component: {fileID: 479299207}
+  - component: {fileID: 479299210}
   m_Layer: 5
   m_Name: Jump btn
   m_TagString: Untagged
@@ -443,8 +444,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -141.4, y: 65.2}
-  m_SizeDelta: {x: 93.6144, y: 91.366}
+  m_AnchoredPosition: {x: -282.00488, y: 127.13498}
+  m_SizeDelta: {x: 181.7408, y: 167.9999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &479299207
 MonoBehaviour:
@@ -528,6 +529,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 479299205}
   m_CullTransparentMesh: 1
+--- !u!114 &479299210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479299205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 619082026}
+          m_TargetAssemblyTypeName: CharactorControl, Assembly-CSharp
+          m_MethodName: Jump
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &513111434
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,8 +592,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0011106, y: -0.000023127}
-  m_SizeDelta: {x: 185.57, y: 43.515}
+  m_AnchoredPosition: {x: -0.0004386902, y: -0.000047684}
+  m_SizeDelta: {x: 353.37, y: 83.149}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513111436
 MonoBehaviour:
@@ -612,8 +642,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -622,7 +652,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 7.75
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -673,7 +703,7 @@ GameObject:
   - component: {fileID: 619082027}
   - component: {fileID: 619082026}
   m_Layer: 0
-  m_Name: MoveManager
+  m_Name: Charator Control
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,7 +723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 1388440529}
   isMove: 0
-  moveButton: {fileID: 0}
+  HitButon: {fileID: 1242954146}
 --- !u!4 &619082027
 Transform:
   m_ObjectHideFlags: 0
@@ -743,10 +773,10 @@ RectTransform:
   - {fileID: 513111435}
   m_Father: {fileID: 1706574903}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 232.7, y: 240.3}
-  m_SizeDelta: {x: 185.569, y: 43.5147}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -551.6775, y: -96.03723}
+  m_SizeDelta: {x: 353.3701, y: 83.1488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647640900
 MonoBehaviour:
@@ -821,8 +851,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -113.7, y: -48.7}
-  m_SizeDelta: {x: 71.4995, y: 70.9483}
+  m_AnchoredPosition: {x: -228.57092, y: -97.03369}
+  m_SizeDelta: {x: 135.3304, y: 134.4614}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &782646944
 MonoBehaviour:
@@ -2506,8 +2536,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 1.5, y: 0}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: 2.199997, y: 1}
+  m_SizeDelta: {x: 91.9286, y: 87.2961}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &900184422
 Animator:
@@ -2714,6 +2744,7 @@ GameObject:
   - component: {fileID: 1242954148}
   - component: {fileID: 1242954147}
   - component: {fileID: 1242954146}
+  - component: {fileID: 1242954149}
   m_Layer: 5
   m_Name: Hit btn
   m_TagString: Untagged
@@ -2737,8 +2768,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -357.9, y: 64}
-  m_SizeDelta: {x: 91.1626, y: 91.3664}
+  m_AnchoredPosition: {x: -711.8474, y: 128.69153}
+  m_SizeDelta: {x: 170.9169, y: 171.1211}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1242954146
 MonoBehaviour:
@@ -2783,7 +2814,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1242954147}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 619082026}
+        m_TargetAssemblyTypeName: CharactorControl, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1242954147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2822,6 +2865,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242954144}
   m_CullTransparentMesh: 1
+--- !u!114 &1242954149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242954144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &1260066468
 GameObject:
   m_ObjectHideFlags: 0
@@ -2911,8 +2967,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 147.1, y: 91.9}
-  m_SizeDelta: {x: 112, y: 112}
+  m_AnchoredPosition: {x: 294.33502, y: 183.44263}
+  m_SizeDelta: {x: 207.6045, y: 206.2706}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1538135804
 MonoBehaviour:
@@ -3139,8 +3195,8 @@ RectTransform:
   - {fileID: 647640899}
   - {fileID: 782646943}
   - {fileID: 1260066469}
-  - {fileID: 2040128864}
   - {fileID: 619082027}
+  - {fileID: 2040128864}
   m_Father: {fileID: 260115685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3184,8 +3240,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 334.4, y: 90.6}
-  m_SizeDelta: {x: 112, y: 112}
+  m_AnchoredPosition: {x: 669.1784, y: 184.58002}
+  m_SizeDelta: {x: 213.6465, y: 208.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839965455
 MonoBehaviour:
@@ -3508,6 +3564,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 260115685}
     m_Modifications:
+    - target: {fileID: 4181044954243002483, guid: 1d4735e94d6c44b04a9151780209a9ca, type: 3}
+      propertyPath: charactorInfo.distanceJump
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5050008166181698845, guid: 1d4735e94d6c44b04a9151780209a9ca, type: 3}
       propertyPath: m_Name
       value: Charactor
