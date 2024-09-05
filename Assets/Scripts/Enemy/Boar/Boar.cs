@@ -9,7 +9,6 @@ public class Boar : MonoBehaviour
 {
     private CharacterManager _characterManager => CharacterManager.Instance;
     [SerializeField] private Collider2D _enemyCollider;
-    
     public int healthPoint;
     [SerializeField] private int attackPoint;
     [SerializeField] protected float speed;
@@ -30,7 +29,7 @@ public class Boar : MonoBehaviour
 
     private void Update()
     {
-        UpdateHeathBarPosition();
+        //UpdateHeathBarPosition();
     }
     private void Init()
     {
@@ -77,14 +76,13 @@ public class Boar : MonoBehaviour
     }
     private void UpdateHearts()
     {
+        
         healthBar.size = (float)healthPoint / _CurrHealthPoint;
     }
     private void UpdateHeathBarPosition()
     {
         //update health bar position follow this enemy position not use camera position
         healthBar.transform.position = new Vector3(transform.position.x + 500f, healthBar.transform.position.y, healthBar.transform.position.z);
-        
-        
     }
     
 }

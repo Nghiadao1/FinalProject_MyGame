@@ -10,12 +10,12 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
 {
     //events
     private AnimationCharactor _animationCharactor => AnimationCharactor.Instance;
+    private CharactorControl _charactorControl => CharactorControl.Instance;
     //Components
     [SerializeField]private Rigidbody2D rb;
     [SerializeField]private  Collider2D characterCollider2D;
     [SerializeField] private GameObject character;
     [SerializeField] private GameObject attackHit;
-    private Move _move;
     
     //Character info
     public CharactorInfo charactorInfo;
@@ -47,51 +47,70 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
 
     //Stage Character
     public bool isGrounded;
-    
-    
+    private float _x;
+    public bool isMove;
+    public bool isJump;
+    public bool isAttack;
     private void Start()
     {
-        isGrounded = true;
+        
         Init();
-        _animationCharactor.SetAnimation();
+        ActiveEvent();
     }
-
+    private Button _hitButton => _charactorControl.HitButon;
     private void Update()
     {
         Move();
-        Attack();
+        Attack(isAttack);
         CheckIdle();
     }
 
     private void Init()
     {
-         _move = character.GetComponent<Move>();
+        isGrounded = true;
+        _animationCharactor.SetAnimation();
     }
+    private void ActiveEvent()
+    {
+        CharactorControl.OnMove += Run;
+        CharactorControl.OnJump += Jump;
+        CharactorControl.OnAttack += Attack;
+    }
+    private void DeActiveEvent()
+    {
+        CharactorControl.OnMove -= Run;
+        CharactorControl.OnJump -= Jump;
+        CharactorControl.OnAttack -= Attack;
+    }
+    
     private void Move()
     {
-        Jump();
-        Run();
+        //Jump(isJump);
+        Run(_x, isMove);
     }
 
-    private void Run()
+    private void Run(float x, bool isMove)
     {
+        if (!isMove)
+        {
+            this.isMove = false;
+            IsGrounded();
+            return;
+        }
+        _x = x;
+        this.isMove = true;
         var direction = Vector3.zero;
-        if (Input.GetKey(KeyCode.A))
-        {
-            direction += Vector3.left;
-            FlipFollowDirection(-1);
-            UpdateTransform(direction);
-            if(!isGrounded) return;
-            _animationCharactor.UpdateAnimation(StageState.Run);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            direction += Vector3.right;
-            FlipFollowDirection(1);
-            UpdateTransform(direction);
-            if(!isGrounded) return;
-            _animationCharactor.UpdateAnimation(StageState.Run);
-        }
+        if (StartMove(ref direction, x)) return;
+    }
+
+    private bool StartMove(ref Vector3 direction, float x)
+    {
+        direction += new Vector3(x,0,0);
+        FlipFollowDirection(x);
+        UpdateTransform(direction);
+        if(!isGrounded) return true;
+        _animationCharactor.UpdateAnimation(StageState.Run);
+        return false;
     }
 
     private void UpdateTransform(Vector3 direction)
@@ -104,35 +123,30 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         character.transform.localScale = new Vector3(x, 1, 1);
     }
 
-    private void Jump()
+    private void Jump(bool isJump)
     {
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
-        {
-            _move.Jump(jumpForce, rb);
-            isGrounded = false;
-            _animationCharactor.UpdateAnimation(StageState.Jump);
-        }
+        if (!isJump || !isGrounded) return;
+        isGrounded = false;
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        _animationCharactor.UpdateAnimation(StageState.Jump);
     }
 
-    private void Attack()
+    private void Attack(bool isAttack)
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            _animationCharactor.UpdateAnimation(StageState.Attack);
-            attackHit.SetActive(true);
-            StartCoroutine(AttackCoroutine());
-        }
+        if (!isAttack) return;
+        _hitButton.interactable = false;
+        this.isAttack = true;
+        _animationCharactor.UpdateAnimation(StageState.Attack);
+        attackHit.SetActive(true);
     }
-    //courotine for attack
-    private IEnumerator AttackCoroutine()
-    {
-        yield return new WaitForSeconds(0.5f);
-        attackHit.SetActive(false);
-    }
+   
     public void EndAttack()
     {
         IsGrounded();
         _animationCharactor.SetAnimation();
+        isAttack = false;
+        attackHit.SetActive(false);
+        _hitButton.interactable = true;
     }
 
     private bool CheckIsGrounded()
@@ -147,7 +161,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     }
     private void CheckIdle()
     {
-        if ((Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.W)) && isGrounded)
+        if (isGrounded && !isMove && !isAttack)
         {
             _animationCharactor.UpdateAnimation(StageState.Idle);
         }

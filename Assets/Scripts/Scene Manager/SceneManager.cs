@@ -9,11 +9,8 @@ public class SceneManager : MonoBehaviour
     
     public void LoadSceneTarget()
     {
-        //using ssscene management load scene by name 
-        //close that scene
         ClosePopup();
         ShowPopup(SceneTarget);
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(SceneTarget.ToString());
     }
     public static void ShowPopup(Scene sceneName)
     {
