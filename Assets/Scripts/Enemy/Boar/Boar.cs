@@ -8,11 +8,12 @@ using UnityEngine.UI;
 public class Boar : MonoBehaviour
 {
     private CharacterManager _characterManager => CharacterManager.Instance;
+    private EnemyAnimation _enemyAnimation => EnemyAnimation.Instance;
     [SerializeField] private Collider2D _enemyCollider;
     public int healthPoint;
     [SerializeField] private int attackPoint;
     [SerializeField] protected float speed;
-    [SerializeField] private bool isAtack;
+    [SerializeField] private bool isAttack;
 
     public int OppAttackPoint;
     
@@ -35,7 +36,9 @@ public class Boar : MonoBehaviour
     {
         InitHearts();
         OppAttackPoint = _characterManager.attackPoint;
+        isAttack = true;
     }
+    
     public void Move()
     {
         var scale = transform.localScale;
@@ -49,17 +52,31 @@ public class Boar : MonoBehaviour
                 transform.localScale = new Vector3(transform.localScale.x * -1, scale.y, scale.z);
             });
         });
+        //move from startPos to endPos by speed
+        // transform.position = Vector3.MoveTowards(transform.position, endPos.position, speed * Time.deltaTime);
+        // if (transform.position == endPos.position)
+        // {
+        //     transform.position = startPos.position;
+        // }
         
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
-             Debug.Log("Player");
+        if (other.CompareTag("Player") && isAttack)
+        {
+            _enemyAnimation.UpdateAnimation(EnemyState.Idle);
+            CharacterManager.Instance.health -= attackPoint;
+            isAttack = false;
+            CharacterManager.Instance.TakeDame();
+        }
         
         if (other.CompareTag("HitAttack"))
         {
             Debug.Log("HitAttack");
+            isAttack = false;
+            _enemyCollider.enabled = false;
+            _enemyAnimation.UpdateAnimation(EnemyState.Hit);
             healthPoint -= OppAttackPoint;
             UpdateHearts();
             if (healthPoint <= 0)
@@ -67,6 +84,12 @@ public class Boar : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+    public void HitComplete()
+    {
+        _enemyAnimation.UpdateAnimation(EnemyState.Walk);
+        isAttack = true;
+        _enemyCollider.enabled = true;
     }
     
     private void InitHearts()

@@ -11,7 +11,7 @@ public class Stage
     public void SetStageState(StageState state)
     {
         CurrentState = state;
-        Debug.LogError("Atack: "+IsAttack+" Dead: "+IsDead+" Run: "+IsRun+" Jump: "+IsJump+" Idle: "+IsIdle);
+        //Debug.LogError("Atack: "+IsAttack+" Dead: "+IsDead+" Run: "+IsRun+" Jump: "+IsJump+" Idle: "+IsIdle);
     }
 
     public bool IsAttack => CurrentState == StageState.Attack;

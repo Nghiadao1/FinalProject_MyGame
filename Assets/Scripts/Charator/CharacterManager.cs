@@ -2,21 +2,23 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.Serialization;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
 {
-    //events
+    //Events
+    public static Action<int> OnTakeDame = delegate {  };
+    //Singleton
     private AnimationCharactor _animationCharactor => AnimationCharactor.Instance;
     private CharactorControl _charactorControl => CharactorControl.Instance;
     //Components
     [SerializeField]private Rigidbody2D rb;
-    [SerializeField]private  Collider2D characterCollider2D;
     [SerializeField] private GameObject character;
     [SerializeField] private GameObject attackHit;
-    
+    [SerializeField] private LayerMask groundLayer;
     //Character info
     public CharactorInfo charactorInfo;
     public float jumpForce
@@ -123,7 +125,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         character.transform.localScale = new Vector3(x, 1, 1);
     }
 
-    private void Jump(bool isJump)
+    public void Jump(bool isJump)
     {
         if (!isJump || !isGrounded) return;
         isGrounded = false;
@@ -151,7 +153,8 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
 
     private bool CheckIsGrounded()
     {
-        var hit = Physics2D.Raycast(transform.position, Vector2.down, distanceJump);
+        // check if the player is grounded with tag "Ground"
+        var hit = Physics2D.Raycast(character.transform.position, Vector2.down, distanceJump, groundLayer);
         return hit.collider != null;
     }
     public void IsGrounded()
@@ -165,6 +168,20 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         {
             _animationCharactor.UpdateAnimation(StageState.Idle);
         }
+    }
+    
+    public void TakeDame()
+    {
+        // if (health <= 0)
+        // {
+        //     _animationCharactor.UpdateAnimation(StageState.Die);
+        //     DeActiveEvent();
+        //     return;
+        // }
+        health -= 10;
+        OnTakeDame?.Invoke(health);
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce*1.2f); 
+        
     }
     
     

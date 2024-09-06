@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAnimation : MonoBehaviour
+public class EnemyAnimation : TemporaryMonoSingleton<EnemyAnimation>
 {
     [SerializeField] private Animator animator;
     public EnemyStage enemyStage;
@@ -15,7 +16,7 @@ public class EnemyAnimation : MonoBehaviour
             animator.SetBool("IsRun", false);
             animator.SetBool("IsWalk", false);
             animator.SetBool("IsAttack", false);
-            animator.SetBool("IsDead", false);
+            animator.SetBool("IsHit", false);
         }
 
         if (enemyStage.IsRun)
@@ -24,7 +25,7 @@ public class EnemyAnimation : MonoBehaviour
             animator.SetBool("IsIdle", false);
             animator.SetBool("IsWalk", false);
             animator.SetBool("IsAttack", false);
-            animator.SetBool("IsDead", false);
+            animator.SetBool("IsHit", false);
         }
         if(enemyStage.IsWalk)
         {
@@ -32,7 +33,7 @@ public class EnemyAnimation : MonoBehaviour
             animator.SetBool("IsRun", false);
             animator.SetBool("IsIdle", false);
             animator.SetBool("IsAttack", false);
-            animator.SetBool("IsDead", false);
+            animator.SetBool("IsHit", false);
         }
         if(enemyStage.IsAttack)
         {
@@ -40,11 +41,11 @@ public class EnemyAnimation : MonoBehaviour
             animator.SetBool("IsRun", false);
             animator.SetBool("IsWalk", false);
             animator.SetBool("IsIdle", false);
-            animator.SetBool("IsDead", false);
+            animator.SetBool("IsHit", false);
         }
-        if(enemyStage.IsDead)
+        if(enemyStage.IsHit)
         {
-            animator.SetBool("IsDead", true);
+            animator.SetBool("IsHit", true);
             animator.SetBool("IsRun", false);
             animator.SetBool("IsWalk", false);
             animator.SetBool("IsAttack", false);
@@ -55,7 +56,7 @@ public class EnemyAnimation : MonoBehaviour
     {
         enemyStage.SetStageState(state);
     }
-    private void UpdateAnimation(EnemyState state)
+    public void UpdateAnimation(EnemyState state)
     {
         SetStage(state);
         SetAnimation();
@@ -66,11 +67,12 @@ public class EnemyAnimation : MonoBehaviour
 public enum EnemyState
 {
     Attack,
-    Dead,
+    Hit,
     Run,
     Walk,
     Idle
 }
+[Serializable]
 public class EnemyStage
 {
     public EnemyState CurrentState { get; private set; }
@@ -81,7 +83,7 @@ public class EnemyStage
     }
 
     public bool IsAttack => CurrentState == EnemyState.Attack;
-    public bool IsDead => CurrentState == EnemyState.Dead;
+    public bool IsHit => CurrentState == EnemyState.Hit;
     public bool IsRun => CurrentState == EnemyState.Run;
     public bool IsWalk => CurrentState == EnemyState.Walk;
     public bool IsIdle => CurrentState == EnemyState.Idle;
