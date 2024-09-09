@@ -15,7 +15,7 @@ public class Boar : MonoBehaviour
     [SerializeField] protected float speed;
     [SerializeField] private bool isAttack;
 
-    public int OppAttackPoint;
+    public int OppAttackPoint => _characterManager.attackPoint;
     
     public Scrollbar healthBar;
     [SerializeField] private Transform startPos;
@@ -35,7 +35,6 @@ public class Boar : MonoBehaviour
     private void Init()
     {
         InitHearts();
-        OppAttackPoint = _characterManager.attackPoint;
         isAttack = true;
     }
     
@@ -78,7 +77,7 @@ public class Boar : MonoBehaviour
             _enemyCollider.enabled = false;
             _enemyAnimation.UpdateAnimation(EnemyState.Hit);
             healthPoint -= OppAttackPoint;
-            UpdateHearts();
+            //UpdateHearts();
             if (healthPoint <= 0)
             {
                 Destroy(gameObject);
@@ -94,8 +93,8 @@ public class Boar : MonoBehaviour
     
     private void InitHearts()
     {
-        _CurrHealthPoint = healthPoint;
-        healthBar.size = healthPoint;
+        //_CurrHealthPoint = healthPoint;
+        //healthBar.size = healthPoint;
     }
     private void UpdateHearts()
     {
