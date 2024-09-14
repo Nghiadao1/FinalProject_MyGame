@@ -183,6 +183,7 @@ MonoBehaviour:
   - Setting
   - ShopScene
   - ModelCharacter
+  - PausePopup
 --- !u!114 &368027680
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -77,12 +77,14 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         CharactorControl.OnMove += Run;
         CharactorControl.OnJump += Jump;
         CharactorControl.OnAttack += Attack;
+        HPBottleText.OnUseHPBottle += UseHealthPotion;
     }
     private void DeActiveEvent()
     {
         CharactorControl.OnMove -= Run;
         CharactorControl.OnJump -= Jump;
         CharactorControl.OnAttack -= Attack;
+        HPBottleText.OnUseHPBottle -= UseHealthPotion;
     }
     
     private void Move()
@@ -182,6 +184,13 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         OnTakeDame?.Invoke(health);
         rb.velocity = new Vector2(rb.velocity.x, jumpForce*1.2f); 
         
+    }
+    private void UseHealthPotion()
+    {
+        var healthMax = 100;
+        health += 50;
+        if(health > healthMax) health = healthMax;
+        OnTakeDame?.Invoke(health);
     }
     
     

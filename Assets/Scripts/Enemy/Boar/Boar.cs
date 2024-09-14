@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class Boar : MonoBehaviour
 {
+    public static Action<int> OnCoinCollected = delegate {  };
     private CharacterManager _characterManager => CharacterManager.Instance;
     private EnemyAnimation _enemyAnimation => EnemyAnimation.Instance;
     [SerializeField] private Collider2D _enemyCollider;
@@ -14,7 +15,7 @@ public class Boar : MonoBehaviour
     [SerializeField] private int attackPoint;
     [SerializeField] protected float speed;
     [SerializeField] private bool isAttack;
-
+    [SerializeField] private int coinValue = 20;
     public int OppAttackPoint => _characterManager.attackPoint;
     
     public Scrollbar healthBar;
@@ -80,6 +81,7 @@ public class Boar : MonoBehaviour
             //UpdateHearts();
             if (healthPoint <= 0)
             {
+                OnCoinCollected(coinValue);
                 Destroy(gameObject);
             }
         }

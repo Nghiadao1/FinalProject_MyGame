@@ -215,7 +215,7 @@ TextureImporter:
         width: 757
         height: 169
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,6 +223,48 @@ TextureImporter:
       bones: []
       spriteID: 3ab6a98fd57ca4009b143246f28fa2f8
       internalID: 1166568640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pack2 1_5
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 1470
+        width: 74
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8c0ddda81044a6f8cb4b0d6c36f30b
+      internalID: 1244061642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pack2 1_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 192
+        width: 574
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd60dc3cae776491fbbd7033314d2aee
+      internalID: -79914386
       vertices: []
       indices: 
       edges: []
@@ -243,6 +285,8 @@ TextureImporter:
       pack2 1_2: 552224832
       pack2 1_3: -2052108216
       pack2 1_4: 1166568640
+      pack2 1_5: 1244061642
+      pack2 1_6: -79914386
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

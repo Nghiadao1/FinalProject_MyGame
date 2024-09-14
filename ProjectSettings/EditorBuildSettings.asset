@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShopScene.unity
     guid: 5122e566e061e48b88fd8b2b32a1d888
+  - enabled: 1
+    path: Assets/Scenes/PausePopup.unity
+    guid: 57f777e66af10433c9152faad220698f
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: aad1dd310f31b47d597df1cf6d9874eb, type: 2}

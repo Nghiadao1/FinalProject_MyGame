@@ -15,6 +15,7 @@ public class PopupLoader : MonoBehaviour
     {
         SceneManager.LoadingSceneTarget(targetScene);
     }
+    [ContextMenu("Close Popup")]
     public void ClosePopup()
     {
         SceneManager.ClosePopup();
