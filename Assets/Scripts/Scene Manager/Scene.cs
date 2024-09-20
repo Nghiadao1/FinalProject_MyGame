@@ -9,4 +9,5 @@ public enum Scene
     Setting = 4,
     ShopScene = 5,
     PausePopup = 6,
+    ItemPopup = 7,
 }
