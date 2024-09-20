@@ -20,7 +20,7 @@ public class Skill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ActiveSkill();
+        ActiveSkillByKeyBoard();
     }
 
     private void FixedUpdate()
@@ -28,7 +28,7 @@ public class Skill : MonoBehaviour
         SkillCoolDown();
     }
 
-    private void ActiveSkill()
+    private void ActiveSkillByKeyBoard()
     {
         if (Input.GetKeyDown(KeyCode.D) && IsSkillCoolDown())
         {
@@ -36,6 +36,13 @@ public class Skill : MonoBehaviour
             skillCoolDown = skillRecovery;
             
         }
+    }
+
+    public void ActiveSkill()
+    {
+        if (!IsSkillCoolDown()) return;
+        OnActiveSkill?.Invoke(hitAttackAnimator, hitAttack);
+        skillCoolDown = skillRecovery;
     }
     private void SkillCoolDown()
     {

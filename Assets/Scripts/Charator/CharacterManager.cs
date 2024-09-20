@@ -49,7 +49,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
 
     //Stage Character
     public bool isGrounded;
-    private float _x;
+    private float _x = 1;
     public bool isMove;
     public bool isJump;
     public bool isAttack;
