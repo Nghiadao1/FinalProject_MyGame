@@ -27,4 +27,5 @@ EditorBuildSettings:
     path: Assets/Scenes/PausePopup.unity
     guid: 57f777e66af10433c9152faad220698f
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 8a3feb7d5f3e944b586ae075950733c6, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: aad1dd310f31b47d597df1cf6d9874eb, type: 2}

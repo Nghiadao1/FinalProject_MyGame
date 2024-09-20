@@ -78,6 +78,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         CharactorControl.OnJump += Jump;
         CharactorControl.OnAttack += Attack;
         HPBottleText.OnUseHPBottle += UseHealthPotion;
+        Skill.OnActiveSkill += AttackSkill;
     }
     private void DeActiveEvent()
     {
@@ -85,6 +86,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         CharactorControl.OnJump -= Jump;
         CharactorControl.OnAttack -= Attack;
         HPBottleText.OnUseHPBottle -= UseHealthPotion;
+        Skill.OnActiveSkill -= AttackSkill;
     }
     
     private void Move()
@@ -142,6 +144,18 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         this.isAttack = true;
         _animationCharactor.UpdateAnimation(StageState.Attack);
         attackHit.SetActive(true);
+    }
+    private void AttackSkill(Animator attackSkill, Transform staTransform)
+    {
+        Attack(true);
+        attackSkill.SetBool("IsHitAttackSkill", true);
+        //using dotween to move attackhit forward and return old position
+        attackHit.transform.DOMoveX( (character.transform.position.x + _x*2), 0.5f).OnComplete(() =>
+        {
+            attackSkill.SetBool("IsHitAttackSkill", false);
+            attackHit.SetActive(false);
+            attackHit.transform.position = staTransform.position;
+        });
     }
    
     public void EndAttack()
