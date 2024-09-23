@@ -53,11 +53,15 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     public bool isMove;
     public bool isJump;
     public bool isAttack;
-    private void Start()
+    private void OnEnable()
     {
         
         Init();
         ActiveEvent();
+    }
+    private void OnDisable()
+    {
+        DeActiveEvent();
     }
     private Button _hitButton => _charactorControl.HitButon;
     private void Update()
@@ -145,12 +149,12 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         _animationCharactor.UpdateAnimation(StageState.Attack);
         attackHit.SetActive(true);
     }
-    private void AttackSkill(Animator attackSkill, Transform staTransform)
+    private void AttackSkill(Animator attackSkill, Transform staTransform, int skillStrength)
     {
         Attack(true);
         attackSkill.SetBool("IsHitAttackSkill", true);
         //using dotween to move attackhit forward and return old position
-        attackHit.transform.DOMoveX( (character.transform.position.x + _x*2), 0.5f).OnComplete(() =>
+        attackHit.transform.DOMoveX( (character.transform.position.x + _x * skillStrength), 0.5f).OnComplete(() =>
         {
             attackSkill.SetBool("IsHitAttackSkill", false);
             attackHit.SetActive(false);

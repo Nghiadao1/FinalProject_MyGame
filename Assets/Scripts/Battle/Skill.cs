@@ -6,9 +6,10 @@ using UnityEngine;
 
 public class Skill : MonoBehaviour
 {
-    public static Action<Animator, Transform> OnActiveSkill = delegate {  };
+    public static Action<Animator, Transform, int> OnActiveSkill = delegate {  };
     [SerializeField] private Animator hitAttackAnimator;
     [SerializeField] private Transform hitAttack;
+    [SerializeField] private int skillStrength = 2;
     // Start is called before the first frame update
     [SerializeField] private float skillCoolDown = 0f;
     [SerializeField] private float skillRecovery = 1f;
@@ -32,7 +33,7 @@ public class Skill : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D) && IsSkillCoolDown())
         {
-            OnActiveSkill?.Invoke(hitAttackAnimator, hitAttack);
+            OnActiveSkill?.Invoke(hitAttackAnimator, hitAttack, skillStrength);
             skillCoolDown = skillRecovery;
             
         }
@@ -41,7 +42,7 @@ public class Skill : MonoBehaviour
     public void ActiveSkill()
     {
         if (!IsSkillCoolDown()) return;
-        OnActiveSkill?.Invoke(hitAttackAnimator, hitAttack);
+        OnActiveSkill?.Invoke(hitAttackAnimator, hitAttack, skillStrength);
         skillCoolDown = skillRecovery;
     }
     private void SkillCoolDown()

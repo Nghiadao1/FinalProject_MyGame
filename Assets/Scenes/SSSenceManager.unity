@@ -135,6 +135,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: SSSenceManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4773185024057642070, guid: e7fe34a9170e84b599b075c603f55cc0, type: 3}
+      propertyPath: m_NotAdditiveSceneList.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773185024057642070, guid: e7fe34a9170e84b599b075c603f55cc0, type: 3}
+      propertyPath: m_NotAdditiveSceneList.Array.data[1]
+      value: ModelCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773185024057642070, guid: e7fe34a9170e84b599b075c603f55cc0, type: 3}
+      propertyPath: m_NotAdditiveSceneList.Array.data[2]
+      value: ItemPopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773185024057642070, guid: e7fe34a9170e84b599b075c603f55cc0, type: 3}
+      propertyPath: m_NotAdditiveSceneList.Array.data[3]
+      value: ItemPopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773185024057642070, guid: e7fe34a9170e84b599b075c603f55cc0, type: 3}
+      propertyPath: m_NotAdditiveSceneList.Array.data[4]
+      value: ItemPopup
+      objectReference: {fileID: 0}
     - target: {fileID: 8506954419317439504, guid: e7fe34a9170e84b599b075c603f55cc0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

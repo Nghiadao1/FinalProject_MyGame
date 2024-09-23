@@ -9,7 +9,6 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
     public static Action<float, bool> OnMove = delegate {  };
     public static Action<bool> OnJump = delegate {  };
     public static Action<bool> OnAttack = delegate {  };
-    public GameObject character;
     private CharacterManager characterManager;
     public bool isMove;
     public Button HitButon;
@@ -20,7 +19,7 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
 
     private void Init()
     {
-        characterManager = character.GetComponent<CharacterManager>();
+        
     }
     
     public void Move(float x)
