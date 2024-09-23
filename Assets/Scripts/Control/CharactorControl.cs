@@ -9,6 +9,7 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
     public static Action<float, bool> OnMove = delegate {  };
     public static Action<bool> OnJump = delegate {  };
     public static Action<bool> OnAttack = delegate {  };
+    public static Action<bool> OnSkill = delegate {  };
     private CharacterManager characterManager;
     public bool isMove;
     public Button HitButon;
@@ -40,5 +41,9 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
     {
         if(!HitButon.interactable) return;
         OnAttack?.Invoke(true);
+    }
+    public void Skill()
+    {
+        OnSkill?.Invoke(true);
     }
 }

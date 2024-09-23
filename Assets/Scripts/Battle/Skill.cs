@@ -13,10 +13,15 @@ public class Skill : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private float skillCoolDown = 0f;
     [SerializeField] private float skillRecovery = 1f;
-    void Start()
+    void OnEnable()
     {
-        
+        CharactorControl.OnSkill += ActiveSkill;
     }
+    void OnDisable()
+    {
+        CharactorControl.OnSkill -= ActiveSkill;
+    }
+    
 
     // Update is called once per frame
     void Update()
@@ -39,9 +44,10 @@ public class Skill : MonoBehaviour
         }
     }
 
-    public void ActiveSkill()
+    public void ActiveSkill(bool isSkill)
     {
         if (!IsSkillCoolDown()) return;
+        if (!isSkill) return;
         OnActiveSkill?.Invoke(hitAttackAnimator, hitAttack, skillStrength);
         skillCoolDown = skillRecovery;
     }

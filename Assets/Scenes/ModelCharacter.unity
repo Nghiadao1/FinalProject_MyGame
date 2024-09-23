@@ -9294,18 +9294,18 @@ PrefabInstance:
     - target: {fileID: 7171232259723791523, guid: 014f0f5ef222349d7bb5313c223654bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 619082026}
     - target: {fileID: 7171232259723791523, guid: 014f0f5ef222349d7bb5313c223654bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7171232259723791523, guid: 014f0f5ef222349d7bb5313c223654bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ActiveSkill
+      value: Skill
       objectReference: {fileID: 0}
     - target: {fileID: 7171232259723791523, guid: 014f0f5ef222349d7bb5313c223654bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Skill, Assembly-CSharp
+      value: CharactorControl, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7171232259723791523, guid: 014f0f5ef222349d7bb5313c223654bf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
