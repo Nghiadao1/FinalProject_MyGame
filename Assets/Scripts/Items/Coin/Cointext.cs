@@ -8,35 +8,40 @@ public class Cointext : MonoBehaviour
 {
    [SerializeField] private TMP_Text cointext;
    private int _totalCoin;
-   private void Awake()
+   private void OnEnable()
    {
       ListenEvent();
+      Init();
    }
 
-   private void OnDestroy()
+   private void OnDisable()
    {
       UnListenEvent();
    }
+   
 
-   private void Start()
+   private void Init()
    {
-      _totalCoin = 0;
-      cointext.text = _totalCoin.ToString();
+      cointext.text = DatabaseManager.LoadData<string>(DatabaseManager.DatabaseKey.Coin);
+      _totalCoin = int.Parse(cointext.text);
    }
 
    private void ListenEvent()
    {
       Coin.OnCollected += UpdateCoin;
       Boar.OnCoinCollected += UpdateCoin;
+      Cheat.OnCheatCoin += UpdateCoin;
    }
    private void UnListenEvent()
    {
       //Coin.OnCoinCollected -= UpdateCoin;
+      Cheat.OnCheatCoin -= UpdateCoin;
    }
    private void UpdateCoin(int coin)
    {
       var coinBonus = _totalCoin + coin;
       _totalCoin = coinBonus;
       cointext.text = _totalCoin.ToString();
+      DatabaseManager.SaveData(DatabaseManager.DatabaseKey.Coin, _totalCoin.ToString());
    }
 }

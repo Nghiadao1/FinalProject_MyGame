@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ItemPopup.unity
     guid: 9fc48cdd402664f278566ec342e79ed9
+  - enabled: 1
+    path: Assets/Scenes/CheatScene.unity
+    guid: df5df2f6ed9a24ae99942ead187eead2
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 8a3feb7d5f3e944b586ae075950733c6, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: aad1dd310f31b47d597df1cf6d9874eb, type: 2}
