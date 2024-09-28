@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static DatabaseManager;
 
 public class Cointext : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class Cointext : MonoBehaviour
 
    private void Init()
    {
-      cointext.text = DatabaseManager.LoadData<string>(DatabaseManager.DatabaseKey.Coin);
+      int coin = LoadData<int>(DatabaseKey.Coin);
+      cointext.text = coin.ToString() ?? "0";
       _totalCoin = int.Parse(cointext.text);
    }
 
@@ -31,17 +33,24 @@ public class Cointext : MonoBehaviour
       Coin.OnCollected += UpdateCoin;
       Boar.OnCoinCollected += UpdateCoin;
       Cheat.OnCheatCoin += UpdateCoin;
+      Shop.OnBuyItem += UpdateCoin;
    }
    private void UnListenEvent()
    {
       //Coin.OnCoinCollected -= UpdateCoin;
       Cheat.OnCheatCoin -= UpdateCoin;
+      Shop.OnBuyItem -= UpdateCoin;
    }
    private void UpdateCoin(int coin)
    {
       var coinBonus = _totalCoin + coin;
       _totalCoin = coinBonus;
+      UpdateText();
+      SaveData(DatabaseKey.Coin, _totalCoin);
+   }
+
+   private void UpdateText()
+   {
       cointext.text = _totalCoin.ToString();
-      DatabaseManager.SaveData(DatabaseManager.DatabaseKey.Coin, _totalCoin.ToString());
    }
 }

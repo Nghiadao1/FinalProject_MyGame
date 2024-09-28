@@ -205,11 +205,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyCollider: {fileID: 1262192282628151161}
-  healthPoint: 500
+  healthPoint: 100
   attackPoint: 0
   speed: 3
   isAttack: 0
-  OppAttackPoint: 0
+  coinValue: 20
   healthBar: {fileID: 0}
   startPos: {fileID: 5783880126370033083}
   endPos: {fileID: 5456599641633883983}

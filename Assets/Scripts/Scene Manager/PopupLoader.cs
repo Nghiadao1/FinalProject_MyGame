@@ -24,4 +24,12 @@ public class PopupLoader : MonoBehaviour
     {
         SceneManager.GoHome();
     }
+    public void ShowLoading()
+    {
+        SceneManager.ShowLoading();
+    }
+    public void HideLoading()
+    {
+        SceneManager.HideLoading();
+    }
 }

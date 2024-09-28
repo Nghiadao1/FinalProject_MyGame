@@ -10,6 +10,7 @@ public enum Scene
     ShopScene = 5,
     PausePopup = 6,
     ItemPopup = 7,
+    LoadingScene = 8,
     
     
     

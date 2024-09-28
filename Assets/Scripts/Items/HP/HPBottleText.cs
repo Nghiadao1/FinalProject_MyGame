@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using static UserManager;
 
 public class HPBottleText : MonoBehaviour
 {
@@ -19,9 +20,10 @@ public class HPBottleText : MonoBehaviour
         UnListenEvent();
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        _totalHPBottle = 0;
+        var hpBottle = GetCountItem(ItemType.HP);
+        _totalHPBottle = hpBottle;
         hpBottletext.text = _totalHPBottle.ToString();
     }
     private void Update()
@@ -32,6 +34,7 @@ public class HPBottleText : MonoBehaviour
             _totalHPBottle -= 1;
             hpBottletext.text = _totalHPBottle.ToString();
             OnUseHPBottle?.Invoke();
+            UpdateCountItem(ItemType.HP, -1);
         }
     }
     private void ListenEvent()
