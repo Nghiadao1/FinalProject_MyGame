@@ -9,8 +9,6 @@ public class DatabaseManager : MonoBehaviour
         Level,
         Coin,
         ItemShop,
-        HP,
-        test
     }
 
     // Generic method to save data to PlayerPrefs

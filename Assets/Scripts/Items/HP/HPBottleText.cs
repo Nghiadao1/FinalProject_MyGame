@@ -50,5 +50,6 @@ public class HPBottleText : MonoBehaviour
         var hpBottleBonus = _totalHPBottle + hpBottle;
         _totalHPBottle = hpBottleBonus;
         hpBottletext.text = _totalHPBottle.ToString();
+        UpdateCountItem(ItemType.HP, hpBottle);
     }
 }
