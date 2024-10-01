@@ -28,6 +28,11 @@ public class HeathCharactor : MonoBehaviour
 
     private void UpdateHeath(int heath)
     {
+        if (heath <= 0)
+        {
+            heath = 0;
+            GameManager.Instance.OnDefeat();
+        }
         _currentHeath = heath;
         textMeshPro.text = $"{_currentHeath}/{_maxHeath}";
         scrollbar.size = (float)_currentHeath / _maxHeath;

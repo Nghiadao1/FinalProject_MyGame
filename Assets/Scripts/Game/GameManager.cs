@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : TemporaryMonoSingleton<GameManager>
 {
     // Start is called before the first frame update
     void Start()
@@ -19,5 +19,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+    public void OnDefeat()
+    {
+        EndGamePopup.endGamePopupType = EndGamePopupType.Defeat;
+        SceneManager.ShowPopup(Scene.EndGamePopup);
+    }
+    public void OnComplete()
+    {
+        EndGamePopup.endGamePopupType = EndGamePopupType.Complete;
+        SceneManager.ShowPopup(Scene.EndGamePopup);
     }
 }
