@@ -15,7 +15,7 @@ public class HPBottle : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            OnCollected(value);
+            OnCollected(1);
             HPBottleAnimator.SetBool("IsCollected", true);
         }
     }

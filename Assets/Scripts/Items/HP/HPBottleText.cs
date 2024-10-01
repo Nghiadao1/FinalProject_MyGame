@@ -30,13 +30,19 @@ public class HPBottleText : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if(_totalHPBottle <=0) return;
-            _totalHPBottle -= 1;
-            hpBottletext.text = _totalHPBottle.ToString();
-            OnUseHPBottle?.Invoke();
-            UpdateCountItem(ItemType.HP, -1);
+            UseHpBottle();
         }
     }
+
+    public void UseHpBottle()
+    {
+        if(_totalHPBottle <=0) return;
+        _totalHPBottle -= 1;
+        hpBottletext.text = _totalHPBottle.ToString();
+        OnUseHPBottle?.Invoke();
+        UpdateCountItem(ItemType.HP, -1);
+    }
+
     private void ListenEvent()
     {
         HPBottle.OnCollected += UpdateHPBottle;
@@ -47,9 +53,10 @@ public class HPBottleText : MonoBehaviour
     }
     private void UpdateHPBottle(int hpBottle)
     {
+        UpdateCountItem(ItemType.HP, hpBottle);
         var hpBottleBonus = _totalHPBottle + hpBottle;
         _totalHPBottle = hpBottleBonus;
         hpBottletext.text = _totalHPBottle.ToString();
-        UpdateCountItem(ItemType.HP, hpBottle);
+        
     }
 }

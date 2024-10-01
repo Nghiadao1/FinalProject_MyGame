@@ -96,6 +96,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     private void Move()
     {
         //Jump(isJump);
+        if(isAttack) return;
         Run(_x, isMove);
     }
 

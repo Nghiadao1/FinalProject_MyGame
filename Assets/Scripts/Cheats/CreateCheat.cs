@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateCheat : MonoBehaviour
+public class CreateCheat : GenericSingleton<CreateCheat>
 {
     // Start is called before the first frame update
     [SerializeField] PopupLoader popupLoader;
