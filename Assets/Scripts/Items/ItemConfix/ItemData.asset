@@ -15,7 +15,10 @@ MonoBehaviour:
   itemShops:
   - name: 0
     price: 50
-    count: 5
+    count: 0
   - name: 1
+    price: 100
+    count: 0
+  - name: 2
     price: 100
     count: 0

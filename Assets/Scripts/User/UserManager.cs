@@ -41,17 +41,5 @@ public class UserManager : TemporaryMonoSingleton<UserManager>
         }
     }
 }
-[Serializable]
-public class ItemShop
-{
-    public ItemType name;
-    public int price;
-    public int count;
-}
 
-public enum ItemType
-{
-    HP,
-    test
-}
 

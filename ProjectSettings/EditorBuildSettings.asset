@@ -36,6 +36,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelsScene.unity
     guid: 8bb44330be4b749b5904562bdc40cc5f
   - enabled: 1
+    path: Assets/Scenes/EndGamePopup.unity
+    guid: 3dfac61d0faac42ab9f22f88f2ac91eb
+  - enabled: 1
     path: Assets/Scenes/CheatScene.unity
     guid: df5df2f6ed9a24ae99942ead187eead2
   m_configObjects:
