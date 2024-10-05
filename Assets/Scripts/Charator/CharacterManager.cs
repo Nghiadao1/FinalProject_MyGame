@@ -20,7 +20,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     [SerializeField] private GameObject attackHit;
     [SerializeField] private LayerMask groundLayer;
     //Character info
-    public CharactorInfo charactorInfo;
+    private CharactorInfo charactorInfo => CharactorInfo.Instance;
     public float jumpForce
     {
         get => charactorInfo.jumpForce;
@@ -45,6 +45,11 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     {
         get => charactorInfo.distanceJump;
         set => charactorInfo.distanceJump = value;
+    }
+    public int shield
+    {
+        get => charactorInfo.shield;
+        set => charactorInfo.shield = value;
     }
 
     //Stage Character
