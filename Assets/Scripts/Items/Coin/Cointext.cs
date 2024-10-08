@@ -48,9 +48,10 @@ public class Cointext : MonoBehaviour
    {
       var coinBonus = _totalCoin + coin;
       _totalCoin = coinBonus;
+      
       UpdateText();
-      //SaveData(DatabaseKey.Coin, _totalCoin);
-      PlayfabManager.SavePlayerData(KeyPlayfab.Coins.ToString(), _totalCoin.ToString());
+      var key = KeyPlayfab.Coins.ToString();
+      PlayfabManager.SavePlayerData(key, _totalCoin.ToString());
    }
 
    private void UpdateText()

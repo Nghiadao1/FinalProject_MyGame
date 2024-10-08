@@ -37,7 +37,6 @@ public class UpgradeShop : MonoBehaviour
     public void Upgrade()
     {
         var key = KeyPlayfab.Coins.ToString();
-        GetValuePlayfab.GetValue(key);
         var coinTxt = UserManager.Instance.coins;
         var coin = int.Parse(coinTxt);
         if (coin < price) return;

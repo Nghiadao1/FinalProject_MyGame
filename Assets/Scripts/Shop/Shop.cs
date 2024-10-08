@@ -31,7 +31,7 @@ public class Shop : MonoBehaviour
     {
         // var coin = LoadData<int>(DatabaseKey.Coin);
         var key = KeyPlayfab.Coins.ToString();
-        GetValuePlayfab.GetValue(key);
+        //GetValuePlayfab.GetValue(key);
         var coinTxt = UserManager.coins;
         var coin = int.Parse(coinTxt);
         if(coin < Price) return;

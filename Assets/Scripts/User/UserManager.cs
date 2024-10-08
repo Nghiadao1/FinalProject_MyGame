@@ -12,21 +12,31 @@ public class UserManager : TemporaryMonoSingleton<UserManager>
     public string coins;
     private void Awake()
     {
+        itemShops = new ItemShop[ItemData.itemShops.Length];
         itemShops = ItemData.itemShops;
+        StartCoroutine(LoadDataUser());
+    }
+
+    private IEnumerator LoadDataUser()
+    {
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < itemShops.Length; i++)
         {
             // Example usage of GetUserData with callback
             var  key = itemShops[i].name.ToString();
-            // playfabManager.GetUserData(key, 
-            //     (value) => {
-            //         Debug.Log("Successfully retrieved Level: " + value);
-            //     },
-            //     (error) => {
-            //         Debug.LogError("Failed to retrieve data: " + error);
-            //     }
-            // );
+            playfabManager.GetUserData(key,
+                (result) =>
+                {
+                    itemShops[i].count = int.Parse(result);
+                },
+                (error) =>
+                {
+                    Debug.Log(error);
+                });
+            yield return new WaitForSeconds(0.5f);
         }
     }
+
     public static int GetPriceItem(ItemType itemType)
     {
         var itemShop = Array.Find(Instance.itemShops, x => x.name == itemType);

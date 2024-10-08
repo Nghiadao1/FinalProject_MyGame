@@ -26,6 +26,8 @@ public class PlayfabManager : TemporaryMonoSingleton<PlayfabManager>
     private void OnDataUpdateSuccess(UpdateUserDataResult result)
     {
         Debug.Log("Data updated successfully");
+        
+        GetValuePlayfab.Instance.GetValue(KeyPlayfab.Coins.ToString());
     }
     private void OnDataUpdateFailure(PlayFabError error)
     {
