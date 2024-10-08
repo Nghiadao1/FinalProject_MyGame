@@ -9,6 +9,8 @@ using static UpgradeManager;
 
 public class UpgradeShop : MonoBehaviour
 { 
+    private GetValuePlayfab GetValuePlayfab => GetValuePlayfab.Instance;
+    private UpgradeManager UpgradeManager => UpgradeManager.Instance;
     public static Action<int> OnUpgrade = delegate { };
     [SerializeField] int price;
     [SerializeField] int value;
@@ -34,10 +36,13 @@ public class UpgradeShop : MonoBehaviour
     }
     public void Upgrade()
     {
-        var coin = LoadData<int>(DatabaseKey.Coin);
+        var key = KeyPlayfab.Coins.ToString();
+        GetValuePlayfab.GetValue(key);
+        var coinTxt = UserManager.Instance.coins;
+        var coin = int.Parse(coinTxt);
         if (coin < price) return;
         OnUpgrade(-price);
-        UpdateValueUpgrade(upgradeType, value);
+        UpgradeManager.UpdateValueUpgrade(upgradeType, value);
         UpdateData();
     }
 }

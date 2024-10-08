@@ -10,7 +10,8 @@ public class Cheat : MonoBehaviour
     public void CheatCoin()
     {
         var coin = 1000;
-        DatabaseManager.SaveData(DatabaseManager.DatabaseKey.Coin, coin);
+        //DatabaseManager.SaveData(DatabaseManager.DatabaseKey.Coin, coin);
+        
         OnCheatCoin(coin);
     }
     public void SetCompleteLevel()

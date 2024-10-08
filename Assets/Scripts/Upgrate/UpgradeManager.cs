@@ -6,6 +6,7 @@ using static DatabaseManager;
 
 public class UpgradeManager : TemporaryMonoSingleton<UpgradeManager>
 {
+    private PlayfabManager PlayfabManager => PlayfabManager.Instance;
     public UpgradeConfigure upgradeConfigure;
     public Upgrade[] upgrades;
 
@@ -14,7 +15,7 @@ public class UpgradeManager : TemporaryMonoSingleton<UpgradeManager>
         upgrades = upgradeConfigure.upgrades;
         for (int i = 0; i < upgrades.Length; i++)
         {
-            upgrades[i].data = LoadData<int>(upgrades[i].upgradeType.ToString(),"0");
+            //upgrades[i].data = LoadData<int>(upgrades[i].upgradeType.ToString(),"0");
         }
     }
     public static int GetPriceUpgrade(UpgradeType upgradeType)
@@ -32,10 +33,20 @@ public class UpgradeManager : TemporaryMonoSingleton<UpgradeManager>
         var upgrade = Array.Find(Instance.upgrades, x => x.upgradeType == upgradeType);
         return upgrade.data;
     }
-    public static void UpdateValueUpgrade(UpgradeType upgradeType, int value)
+    public void UpdateValueUpgrade(UpgradeType upgradeType, int value)
     {
         var upgrade = Array.Find(Instance.upgrades, x => x.upgradeType == upgradeType);
         upgrade.data += value;
-        SaveData<int>(upgradeType.ToString(), upgrade.data);
+        var key = upgradeType.ToString();
+        PlayfabManager.SavePlayerData(key, upgrade.data.ToString());
+        
+    }
+    private void OnApplicationQuit()
+    {
+        for (int i = 0; i < upgrades.Length; i++)
+        {
+            //SaveData<Upgrade>(DatabaseKey.Upgrade + i, upgrades[i]);
+            PlayfabManager.SavePlayerData(upgrades[i].upgradeType.ToString(), upgrades[i].data.ToString());
+        }
     }
 }

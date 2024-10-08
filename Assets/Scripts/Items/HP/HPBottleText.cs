@@ -7,6 +7,7 @@ using static UserManager;
 
 public class HPBottleText : MonoBehaviour
 {
+    private UserManager UserManager => UserManager.Instance;
     public static Action OnUseHPBottle = delegate { };
     [SerializeField] private TMP_Text hpBottletext;
     private int _totalHPBottle;
@@ -40,7 +41,7 @@ public class HPBottleText : MonoBehaviour
         _totalHPBottle -= 1;
         hpBottletext.text = _totalHPBottle.ToString();
         OnUseHPBottle?.Invoke();
-        UpdateCountItem(ItemType.HP, -1);
+        UserManager.UpdateCountItem(ItemType.HP, -1);
     }
 
     private void ListenEvent()
@@ -53,7 +54,7 @@ public class HPBottleText : MonoBehaviour
     }
     private void UpdateHPBottle(int hpBottle)
     {
-        UpdateCountItem(ItemType.HP, hpBottle);
+        UserManager.UpdateCountItem(ItemType.HP, hpBottle);
         var hpBottleBonus = _totalHPBottle + hpBottle;
         _totalHPBottle = hpBottleBonus;
         hpBottletext.text = _totalHPBottle.ToString();

@@ -720,6 +720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 0
   value: 0
+  data: 0
   upgradeType: 4
   valueText: {fileID: 571713092}
 --- !u!1 &171648867
@@ -3555,7 +3556,6 @@ GameObject:
   - component: {fileID: 1294865625}
   - component: {fileID: 1294865628}
   - component: {fileID: 1294865627}
-  - component: {fileID: 1294865626}
   m_Layer: 5
   m_Name: Ground
   m_TagString: Untagged
@@ -3583,22 +3583,6 @@ RectTransform:
   m_AnchoredPosition: {x: 120, y: 71}
   m_SizeDelta: {x: 100, y: 149.7722}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1294865626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294865624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf2ba1d2cc6646f592d5915a274d4d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ItemName: 0
-  textNumberItem: {fileID: 0}
-  Price: 0
-  Count: 0
 --- !u!114 &1294865627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4589,6 +4573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 0
   value: 0
+  data: 0
   upgradeType: 3
   valueText: {fileID: 1349452617}
 --- !u!1 &1800570772
@@ -5391,6 +5376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 0
   value: 0
+  data: 0
   upgradeType: 2
   valueText: {fileID: 423189723}
 --- !u!1660057539 &9223372036854775807

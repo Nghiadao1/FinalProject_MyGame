@@ -7,6 +7,8 @@ using static DatabaseManager;
 
 public class Cointext : MonoBehaviour
 {
+   private PlayfabManager PlayfabManager => PlayfabManager.Instance;
+   private GetValuePlayfab GetValuePlayfab => GetValuePlayfab.Instance;
    [SerializeField] private TMP_Text cointext;
    private int _totalCoin;
    private void OnEnable()
@@ -23,8 +25,9 @@ public class Cointext : MonoBehaviour
 
    private void Init()
    {
-      int coin = LoadData<int>(DatabaseKey.Coin);
-      cointext.text = coin.ToString() ?? "0";
+      var key = KeyPlayfab.Coins.ToString();
+      GetValuePlayfab.GetValue(key);
+      cointext.text = UserManager.Instance.coins;
       _totalCoin = int.Parse(cointext.text);
    }
 
@@ -46,7 +49,8 @@ public class Cointext : MonoBehaviour
       var coinBonus = _totalCoin + coin;
       _totalCoin = coinBonus;
       UpdateText();
-      SaveData(DatabaseKey.Coin, _totalCoin);
+      //SaveData(DatabaseKey.Coin, _totalCoin);
+      PlayfabManager.SavePlayerData(KeyPlayfab.Coins.ToString(), _totalCoin.ToString());
    }
 
    private void UpdateText()
