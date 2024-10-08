@@ -9,7 +9,7 @@ public class GetValuePlayfab : TemporaryMonoSingleton<GetValuePlayfab>
     
     private void Start()
     {
-        Invoke("GetCoins",0.25f);
+        Invoke("GetCoins",0.5f);
     }
 
     private void GetCoins()
