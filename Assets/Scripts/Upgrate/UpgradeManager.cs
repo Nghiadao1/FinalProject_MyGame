@@ -13,11 +13,28 @@ public class UpgradeManager : TemporaryMonoSingleton<UpgradeManager>
     private void Awake()
     {
         upgrades = upgradeConfigure.upgrades;
+        StartCoroutine(LoadDataUpgrade());
+    }
+
+    private IEnumerator LoadDataUpgrade()
+    {
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < upgrades.Length; i++)
         {
-            //upgrades[i].data = LoadData<int>(upgrades[i].upgradeType.ToString(),"0");
+            var key = upgrades[i].upgradeType.ToString();
+            PlayfabManager.GetUserData(key,
+                (result) =>
+                {
+                    upgrades[i].data = int.Parse(result);
+                },
+                (error) =>
+                {
+                    Debug.Log(error);
+                });
+            yield return new WaitForSeconds(0.5f);
         }
     }
+
     public static int GetPriceUpgrade(UpgradeType upgradeType)
     {
         var upgrade = Array.Find(Instance.upgrades, x => x.upgradeType == upgradeType);
@@ -41,12 +58,5 @@ public class UpgradeManager : TemporaryMonoSingleton<UpgradeManager>
         PlayfabManager.SavePlayerData(key, upgrade.data.ToString());
         
     }
-    private void OnApplicationQuit()
-    {
-        for (int i = 0; i < upgrades.Length; i++)
-        {
-            //SaveData<Upgrade>(DatabaseKey.Upgrade + i, upgrades[i]);
-            PlayfabManager.SavePlayerData(upgrades[i].upgradeType.ToString(), upgrades[i].data.ToString());
-        }
-    }
+    
 }

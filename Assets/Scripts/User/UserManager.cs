@@ -54,14 +54,6 @@ public class UserManager : TemporaryMonoSingleton<UserManager>
         //SaveData<int>(itemType.ToString(), itemShop.count);
         playfabManager.SavePlayerData(itemType.ToString(), itemShop.count.ToString());
     }
-    private void OnApplicationQuit()
-    {
-        for (int i = 0; i < itemShops.Length; i++)
-        {
-            // SaveData<ItemShop>(DatabaseKey.ItemShop + i, itemShops[i]);
-            playfabManager.SavePlayerData(itemShops[i].name.ToString(), itemShops[i].count.ToString());
-        }
-    }
 }
 
 
