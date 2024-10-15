@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 55ebd3bdc82324833b30f284c630bdb8, type: 3}
   m_Name: CharacterDataConFigure
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDataConFigure
-  speed: 8
-  jumpForce: 10
+  speed: 5
+  jumpForce: 9
   health: 100
   attackPoint: 5
-  distanceJump: 0.1
   shield: 0

@@ -2,17 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu(fileName = "CharacterDataConFigure", menuName = "Character/CharacterDataConFigure")]
-public class CharacterDataConFigure : ScriptableObject
-{
-    public float speed;
-    public float jumpForce;
-    public int health;
-    public int attackPoint;
-    public float distanceJump;
-    public int shield;
-}
-
 
 [Serializable]
 public class CharactorInfo : TemporaryMonoSingleton<CharactorInfo>
@@ -22,7 +11,7 @@ public class CharactorInfo : TemporaryMonoSingleton<CharactorInfo>
     public float jumpForce;
     public int health;
     public int attackPoint;
-    public float distanceJump;
+    //public float distanceJump;
     public int shield;
     
     private void Awake()
@@ -36,7 +25,7 @@ public class CharactorInfo : TemporaryMonoSingleton<CharactorInfo>
         jumpForce = characterDataConFigure.jumpForce;
         health = characterDataConFigure.health;
         attackPoint = characterDataConFigure.attackPoint;
-        distanceJump = characterDataConFigure.distanceJump;
+        //distanceJump = characterDataConFigure.distanceJump;
         shield = characterDataConFigure.shield;
     }
 
@@ -50,7 +39,7 @@ public class CharactorInfo : TemporaryMonoSingleton<CharactorInfo>
         this.jumpForce = jumpForce;
         this.health = health;
         this.attackPoint = attackPoint;
-        this.distanceJump = distanceJump;
+        //this.distanceJump = distanceJump;
         this.shield = shield;
     }
 }

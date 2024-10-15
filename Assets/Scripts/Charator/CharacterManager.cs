@@ -45,11 +45,8 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         get => charactorInfo.attackPoint + atackUpgrade;
         set => charactorInfo.attackPoint = value;
     }
-    public float distanceJump
-    {
-        get => charactorInfo.distanceJump;
-        set => charactorInfo.distanceJump = value;
-    }
+
+    public float distanceJump;
     public int shield
     {
         get => charactorInfo.shield + shieldUpgrade;

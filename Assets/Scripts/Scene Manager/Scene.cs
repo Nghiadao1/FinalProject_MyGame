@@ -13,6 +13,7 @@ public enum Scene
     LoadingScene = 8,
     LevelsScene = 9,
     EndGamePopup = 10,
+    Game = 11,
     
     
     
