@@ -27,12 +27,31 @@ public class CharactorInfo : TemporaryMonoSingleton<CharactorInfo>
     
     private void Awake()
     {
+        SetDataDefault();
+    }
+
+    public void SetDataDefault()
+    {
         speed = characterDataConFigure.speed;
         jumpForce = characterDataConFigure.jumpForce;
         health = characterDataConFigure.health;
         attackPoint = characterDataConFigure.attackPoint;
         distanceJump = characterDataConFigure.distanceJump;
         shield = characterDataConFigure.shield;
+    }
+
+    private void SetCharactorInfo()
+    {
+        
+    }
+    public void SetCharactorInfo(float speed, float jumpForce, int health, int attackPoint, float distanceJump, int shield)
+    {
+        this.speed = speed;
+        this.jumpForce = jumpForce;
+        this.health = health;
+        this.attackPoint = attackPoint;
+        this.distanceJump = distanceJump;
+        this.shield = shield;
     }
 }
 

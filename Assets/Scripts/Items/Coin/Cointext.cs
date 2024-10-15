@@ -37,12 +37,14 @@ public class Cointext : MonoBehaviour
       Boar.OnCoinCollected += UpdateCoin;
       Cheat.OnCheatCoin += UpdateCoin;
       Shop.OnBuyItem += UpdateCoin;
+      UpgradeShop.OnUpgrade += UpdateCoin;
    }
    private void UnListenEvent()
    {
       //Coin.OnCoinCollected -= UpdateCoin;
       Cheat.OnCheatCoin -= UpdateCoin;
       Shop.OnBuyItem -= UpdateCoin;
+      UpgradeShop.OnUpgrade -= UpdateCoin;
    }
    private void UpdateCoin(int coin)
    {

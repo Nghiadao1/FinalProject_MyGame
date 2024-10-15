@@ -32,7 +32,7 @@ public class UpgradeShop : MonoBehaviour
     {
         data = GetDataUpgrade(upgradeType);
         _currentValue = data;
-        valueText.text = _currentValue.ToString();
+        valueText.text = "+ " + _currentValue.ToString();
     }
     public void Upgrade()
     {

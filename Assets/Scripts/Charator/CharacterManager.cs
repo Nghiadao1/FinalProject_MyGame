@@ -21,6 +21,10 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     [SerializeField] private LayerMask groundLayer;
     //Character info
     private CharactorInfo charactorInfo => CharactorInfo.Instance;
+    private UpgradeManager _upgradeManager => UpgradeManager.Instance;
+    private int healthUpgrade => UpgradeManager.GetDataUpgrade(UpgradeType.health);
+    private int atackUpgrade => UpgradeManager.GetDataUpgrade(UpgradeType.attackPoint);
+    private int shieldUpgrade => UpgradeManager.GetDataUpgrade(UpgradeType.DEF);
     public float jumpForce
     {
         get => charactorInfo.jumpForce;
@@ -31,14 +35,14 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         get => charactorInfo.speed;
         set => charactorInfo.speed = value;
     }
-    public int health
-    {
-        get => charactorInfo.health;
-        set => charactorInfo.health = value;
-    }
+    public int health;
+    // {
+    //     get => 
+    //     set => charactorInfo.health  = value;
+    // }
     public int attackPoint
     {
-        get => charactorInfo.attackPoint;
+        get => charactorInfo.attackPoint + atackUpgrade;
         set => charactorInfo.attackPoint = value;
     }
     public float distanceJump
@@ -48,7 +52,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     }
     public int shield
     {
-        get => charactorInfo.shield;
+        get => charactorInfo.shield + shieldUpgrade;
         set => charactorInfo.shield = value;
     }
 
@@ -78,8 +82,14 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
 
     private void Init()
     {
+        InitInfo();
         isGrounded = true;
         _animationCharactor.SetAnimation();
+    }
+    private void InitInfo()
+    {
+        charactorInfo.SetDataDefault();
+        health =(charactorInfo.health + healthUpgrade);
     }
     private void ActiveEvent()
     {
@@ -211,7 +221,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     }
     private void UseHealthPotion()
     {
-        var healthMax = 100;
+        var healthMax = charactorInfo.health + healthUpgrade;
         health += 50;
         if(health > healthMax) health = healthMax;
         OnTakeDame?.Invoke(health);

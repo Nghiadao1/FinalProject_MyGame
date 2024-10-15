@@ -10,7 +10,7 @@ public class UpgradeManager : TemporaryMonoSingleton<UpgradeManager>
     public UpgradeConfigure upgradeConfigure;
     public Upgrade[] upgrades;
 
-    private void Awake()
+    private void Start()
     {
         upgrades = upgradeConfigure.upgrades;
         StartCoroutine(LoadDataUpgrade());

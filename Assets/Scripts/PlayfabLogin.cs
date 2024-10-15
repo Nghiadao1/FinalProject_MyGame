@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayfabLogin : MonoBehaviour
 {
-    public void Start()
+    public void Awake()
     {
         if (string.IsNullOrEmpty(PlayFabSettings.staticSettings.TitleId)){
             /*
