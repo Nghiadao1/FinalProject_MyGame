@@ -59,6 +59,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     public bool isMove;
     public bool isJump;
     public bool isAttack;
+    public bool isHit;
     private void OnEnable()
     {
         
@@ -72,9 +73,10 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     private Button _hitButton => _charactorControl.HitButon;
     private void Update()
     {
+        if(isHit) return;
         Move();
-        Attack(isAttack);
         CheckIdle();
+        Attack(isAttack);
     }
 
     private void Init()
@@ -213,8 +215,18 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
         // }
         health -= 10;
         OnTakeDame?.Invoke(health);
-        rb.velocity = new Vector2(rb.velocity.x, jumpForce*1.2f); 
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce*0.8f); 
         
+        //disable collider for 0.5s
+        StartCoroutine(DelayHit());
+    }
+    private IEnumerator DelayHit()
+    {
+        isHit = true;
+        _animationCharactor.UpdateAnimation(StageState.Hit);
+        yield return new WaitForSeconds(0.5f);
+        isHit = false;
+        EndAttack();
     }
     private void UseHealthPotion()
     {

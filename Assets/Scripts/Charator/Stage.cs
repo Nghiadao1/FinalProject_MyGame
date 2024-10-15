@@ -19,4 +19,5 @@ public class Stage
     public bool IsRun => CurrentState == StageState.Run;
     public bool IsJump => CurrentState == StageState.Jump;
     public bool IsIdle => CurrentState == StageState.Idle;
+    public bool IsHit => CurrentState == StageState.Hit;
 }

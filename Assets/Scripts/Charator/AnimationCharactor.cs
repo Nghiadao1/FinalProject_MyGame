@@ -16,6 +16,7 @@ public class AnimationCharactor : TemporaryMonoSingleton<AnimationCharactor>
             animator.SetBool("IsJump", false);
             animator.SetBool("IsAttack", false);
             animator.SetBool("IsDead", false);
+            animator.SetBool("IsHit", false);
         }
         
         if(_stage.IsDead)
@@ -25,6 +26,7 @@ public class AnimationCharactor : TemporaryMonoSingleton<AnimationCharactor>
             animator.SetBool("IsJump", false);
             animator.SetBool("IsIdle", false);
             animator.SetBool("IsAttack", false);
+            animator.SetBool("IsHit", false);
             
         }
         if(_stage.IsRun)
@@ -34,6 +36,7 @@ public class AnimationCharactor : TemporaryMonoSingleton<AnimationCharactor>
             animator.SetBool("IsIdle", false);
             animator.SetBool("IsAttack", false);
             animator.SetBool("IsDead", false);
+            animator.SetBool("IsHit", false);
             
         }
         if(_stage.IsJump)
@@ -43,6 +46,7 @@ public class AnimationCharactor : TemporaryMonoSingleton<AnimationCharactor>
             animator.SetBool("IsIdle", false);
             animator.SetBool("IsAttack", false);
             animator.SetBool("IsDead", false);
+            animator.SetBool("IsHit", false);
             
         }
         
@@ -53,6 +57,16 @@ public class AnimationCharactor : TemporaryMonoSingleton<AnimationCharactor>
             animator.SetBool("IsJump", false);
             animator.SetBool("IsIdle", false);
             animator.SetBool("IsDead", false);
+            animator.SetBool("IsHit", false);
+        }
+        if(_stage.IsHit)
+        {
+            animator.SetBool("IsHit", true);
+            animator.SetBool("IsRun", false);
+            animator.SetBool("IsJump", false);
+            animator.SetBool("IsIdle", false);
+            animator.SetBool("IsDead", false);
+            animator.SetBool("IsAttack", false);
         }
     }
     private void SetStage(StageState state)

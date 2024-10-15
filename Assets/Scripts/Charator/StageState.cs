@@ -8,5 +8,6 @@ public enum StageState
     Dead,
     Run,
     Jump,
-    Idle
+    Idle,
+    Hit
 }

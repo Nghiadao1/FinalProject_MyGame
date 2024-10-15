@@ -22,45 +22,55 @@ public class Boar : MonoBehaviour
     [SerializeField] private Transform startPos;
     [SerializeField] private Transform endPos;
     private int _CurrHealthPoint;
+    private bool movingEnd = true;
+    private Rigidbody2D _rigidbody2D;
     
     private void Start()
     {
-        Move();
         Init();
     }
 
     private void Update()
     {
-        //UpdateHeathBarPosition();
+        if(!isAttack) return;
+        Move();
     }
     private void Init()
     {
         InitHearts();
         isAttack = true;
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        transform.position = startPos.position;
     }
     
     public void Move()
     {
-        var scale = transform.localScale;
-        //move from startPos to endPos by speed and DoTween
-        transform.DOMove(startPos.position, speed).OnComplete(() =>
-        {
-            transform.localScale = new Vector3(transform.localScale.x * -1, scale.y, scale.z);
-            transform.DOMove(endPos.position, speed).OnComplete(() =>
-            {
-                Move();
-                transform.localScale = new Vector3(transform.localScale.x * -1, scale.y, scale.z);
-            });
-        });
-        //move from startPos to endPos by speed
-        // transform.position = Vector3.MoveTowards(transform.position, endPos.position, speed * Time.deltaTime);
-        // if (transform.position == endPos.position)
+        // var scale = transform.localScale;
+        // //move from startPos to endPos by speed and DoTween
+        // transform.DOMove(startPos.position, speed).OnComplete(() =>
         // {
-        //     transform.position = startPos.position;
-        // }
+        //     transform.localScale = new Vector3(transform.localScale.x * -1, scale.y, scale.z);
+        //     transform.DOMove(endPos.position, speed).OnComplete(() =>
+        //     {
+        //         //Move();
+        //         transform.localScale = new Vector3(transform.localScale.x * -1, scale.y, scale.z);
+        //     });
+        // });
         
+        var target = movingEnd ? endPos.position : startPos.position;
+        transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        if(Vector3.Distance(transform.position, target) < 0.1f)
+        {
+            FlipEnemy();
+        }
     }
-    
+
+    private void FlipEnemy()
+    {
+        movingEnd = !movingEnd;
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && isAttack)
@@ -69,6 +79,7 @@ public class Boar : MonoBehaviour
             CharacterManager.Instance.health -= attackPoint;
             isAttack = false;
             CharacterManager.Instance.TakeDame();
+            FlipEnemy();
         }
         
         if (other.CompareTag("HitAttack"))
@@ -91,6 +102,7 @@ public class Boar : MonoBehaviour
         _enemyAnimation.UpdateAnimation(EnemyState.Walk);
         isAttack = true;
         _enemyCollider.enabled = true;
+        Move();
     }
     
     private void InitHearts()

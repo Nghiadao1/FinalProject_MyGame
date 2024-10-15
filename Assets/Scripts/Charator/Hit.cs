@@ -5,17 +5,11 @@ using UnityEngine;
 
 public class Hit : MonoBehaviour
 {
-    private CharacterManager characterManager => CharacterManager.Instance;
-    [SerializeField]private  Collider2D characterCollider2D;
-    public float knockBackStrength;
+    private AnimationCharactor _animationCharactor => AnimationCharactor.Instance;
     
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnEndHit()
     {
-        // if (other.CompareTag("Enemy"))
-        // {
-        //     Vector2 knockBackDirection = (transform.position - other.transform.position).normalized;
-        //     characterManager.KnockBack();
-        // }
+        _animationCharactor.UpdateAnimation(StageState.Jump);
     }
 }
