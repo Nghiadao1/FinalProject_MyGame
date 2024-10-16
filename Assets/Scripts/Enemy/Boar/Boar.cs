@@ -9,7 +9,7 @@ public class Boar : MonoBehaviour
 {
     public static Action<int> OnCoinCollected = delegate {  };
     //private CharacterManager _characterManager => CharacterManager.Instance;
-    [SerializeField] private EnemyAnimation _enemyAnimation;
+    private EnemyAnimation _enemyAnimation;
     [SerializeField] public Collider2D _enemyCollider;
     public int healthPoint;
     [SerializeField] private int attackPoint;
@@ -39,7 +39,7 @@ public class Boar : MonoBehaviour
     {
         InitHearts();
         isAttack = true;
-        //_enemyAnimation = GetComponent<EnemyAnimation>();
+        _enemyAnimation = GetComponent<EnemyAnimation>();
         if(startPos == null) return;
         transform.position = startPos.position;
     }

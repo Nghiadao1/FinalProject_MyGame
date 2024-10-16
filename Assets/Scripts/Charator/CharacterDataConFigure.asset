@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CharacterDataConFigure
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDataConFigure
   speed: 3
-  jumpForce: 9
+  jumpForce: 7
   health: 100
   attackPoint: 5
   shield: 0
