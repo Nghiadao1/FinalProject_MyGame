@@ -617,7 +617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ee55d1bac1342c7a55e193ef132051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 1
+  targetScene: 10
 --- !u!114 &420852692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2873,7 +2873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ee55d1bac1342c7a55e193ef132051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: 1
+  targetScene: 10
 --- !u!114 &1825157215
 MonoBehaviour:
   m_ObjectHideFlags: 0

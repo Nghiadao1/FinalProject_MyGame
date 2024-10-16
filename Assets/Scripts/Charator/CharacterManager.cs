@@ -60,6 +60,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     public bool isJump;
     public bool isAttack;
     public bool isHit;
+    public bool isDead;
     private void OnEnable()
     {
         
@@ -73,7 +74,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     private Button _hitButton => _charactorControl.HitButon;
     private void Update()
     {
-        if(isHit) return;
+        if(isHit || isDead) return;
         Move();
         CheckIdle();
         Attack(isAttack);
@@ -83,6 +84,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     {
         InitInfo();
         isGrounded = true;
+        isDead = false;
         _animationCharactor.SetAnimation();
     }
     private void InitInfo()
@@ -207,19 +209,26 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     
     public void TakeDame()
     {
-        // if (health <= 0)
-        // {
-        //     _animationCharactor.UpdateAnimation(StageState.Die);
-        //     DeActiveEvent();
-        //     return;
-        // }
         health -= 10;
+        if (health <= 0)
+        {
+            health = 0;
+            isDead = true;
+            _animationCharactor.UpdateAnimation(StageState.Dead);
+            //ShowDefeatPopup();
+        }
         OnTakeDame?.Invoke(health);
+        if(health <= 0) return;
         rb.velocity = new Vector2(rb.velocity.x, jumpForce*0.8f); 
-        
         //disable collider for 0.5s
         StartCoroutine(DelayHit());
     }
+
+    private void ShowDefeatPopup()
+    {
+        GameManager.Instance.OnDefeat();
+    }
+
     private IEnumerator DelayHit()
     {
         isHit = true;
