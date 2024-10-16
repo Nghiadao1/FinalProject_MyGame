@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAnimation : TemporaryMonoSingleton<EnemyAnimation>
+public class EnemyAnimation : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     public EnemyStage enemyStage;

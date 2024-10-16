@@ -8,15 +8,15 @@ using UnityEngine.UI;
 public class Boar : MonoBehaviour
 {
     public static Action<int> OnCoinCollected = delegate {  };
-    private CharacterManager _characterManager => CharacterManager.Instance;
-    private EnemyAnimation _enemyAnimation => EnemyAnimation.Instance;
+    //private CharacterManager _characterManager => CharacterManager.Instance;
+    private EnemyAnimation _enemyAnimation;
     [SerializeField] private Collider2D _enemyCollider;
     public int healthPoint;
     [SerializeField] private int attackPoint;
     [SerializeField] protected float speed;
     [SerializeField] private bool isAttack;
     [SerializeField] private int coinValue = 20;
-    public int OppAttackPoint => _characterManager.attackPoint;
+    //public int OppAttackPoint => _characterManager.attackPoint;
     
     public Scrollbar healthBar;
     [SerializeField] private Transform startPos;
@@ -25,7 +25,7 @@ public class Boar : MonoBehaviour
     private bool movingEnd = true;
     private Rigidbody2D _rigidbody2D;
     
-    private void Start()
+    private void OnEnable()
     {
         Init();
     }
@@ -39,7 +39,7 @@ public class Boar : MonoBehaviour
     {
         InitHearts();
         isAttack = true;
-        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _enemyAnimation = GetComponent<EnemyAnimation>();
         transform.position = startPos.position;
     }
     
@@ -76,7 +76,7 @@ public class Boar : MonoBehaviour
         if (other.CompareTag("Player") && isAttack)
         {
             _enemyAnimation.UpdateAnimation(EnemyState.Idle);
-            CharacterManager.Instance.health -= attackPoint;
+            //CharacterManager.Instance.health -= attackPoint;
             isAttack = false;
             CharacterManager.Instance.TakeDame();
             FlipEnemy();
@@ -88,8 +88,8 @@ public class Boar : MonoBehaviour
             isAttack = false;
             _enemyCollider.enabled = false;
             _enemyAnimation.UpdateAnimation(EnemyState.Hit);
-            healthPoint -= OppAttackPoint;
-            //UpdateHearts();
+            //healthPoint -= OppAttackPoint;
+            healthPoint -= CharacterManager.Instance.attackPoint;
             if (healthPoint <= 0)
             {
                 OnCoinCollected(coinValue);

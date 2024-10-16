@@ -280,7 +280,6 @@ MonoBehaviour:
   jumpForce: 0
   health: 0
   attackPoint: 0
-  distanceJump: 0
   shield: 0
 --- !u!1001 &307678608555460311
 PrefabInstance:
@@ -300,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4773185024057642070, guid: e7fe34a9170e84b599b075c603f55cc0, type: 3}
       propertyPath: m_NotAdditiveSceneList.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4773185024057642070, guid: e7fe34a9170e84b599b075c603f55cc0, type: 3}
       propertyPath: m_NotAdditiveSceneList.Array.data[2]
@@ -308,7 +307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4773185024057642070, guid: e7fe34a9170e84b599b075c603f55cc0, type: 3}
       propertyPath: m_NotAdditiveSceneList.Array.data[3]
-      value: LevelScene
+      value: Game
       objectReference: {fileID: 0}
     - target: {fileID: 8506954419317439504, guid: e7fe34a9170e84b599b075c603f55cc0, type: 3}
       propertyPath: m_LocalPosition.x
