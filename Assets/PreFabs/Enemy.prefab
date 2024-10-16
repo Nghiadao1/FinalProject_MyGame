@@ -205,8 +205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35994fac2885643a69ee0680828ce512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyAnimation: {fileID: 889816480740864693}
   _enemyCollider: {fileID: 3598827092068033593}
-  healthPoint: 50
+  healthPoint: 150
   attackPoint: 0
   speed: 1
   isAttack: 0

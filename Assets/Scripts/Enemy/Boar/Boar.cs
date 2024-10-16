@@ -9,12 +9,12 @@ public class Boar : MonoBehaviour
 {
     public static Action<int> OnCoinCollected = delegate {  };
     //private CharacterManager _characterManager => CharacterManager.Instance;
-    private EnemyAnimation _enemyAnimation;
-    [SerializeField] private Collider2D _enemyCollider;
+    [SerializeField] private EnemyAnimation _enemyAnimation;
+    [SerializeField] public Collider2D _enemyCollider;
     public int healthPoint;
     [SerializeField] private int attackPoint;
     [SerializeField] protected float speed;
-    [SerializeField] private bool isAttack;
+    [SerializeField] public bool isAttack;
     [SerializeField] private int coinValue = 20;
     //public int OppAttackPoint => _characterManager.attackPoint;
     
@@ -39,24 +39,14 @@ public class Boar : MonoBehaviour
     {
         InitHearts();
         isAttack = true;
-        _enemyAnimation = GetComponent<EnemyAnimation>();
+        //_enemyAnimation = GetComponent<EnemyAnimation>();
+        if(startPos == null) return;
         transform.position = startPos.position;
     }
     
     public void Move()
     {
-        // var scale = transform.localScale;
-        // //move from startPos to endPos by speed and DoTween
-        // transform.DOMove(startPos.position, speed).OnComplete(() =>
-        // {
-        //     transform.localScale = new Vector3(transform.localScale.x * -1, scale.y, scale.z);
-        //     transform.DOMove(endPos.position, speed).OnComplete(() =>
-        //     {
-        //         //Move();
-        //         transform.localScale = new Vector3(transform.localScale.x * -1, scale.y, scale.z);
-        //     });
-        // });
-        
+        if(endPos == null) return;
         var target = movingEnd ? endPos.position : startPos.position;
         transform.position = Vector3.MoveTowards(transform.position, target, speed * Time.deltaTime);
         if(Vector3.Distance(transform.position, target) < 0.1f)
@@ -71,7 +61,7 @@ public class Boar : MonoBehaviour
         transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && isAttack)
         {

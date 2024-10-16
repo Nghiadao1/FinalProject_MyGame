@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 7494753825836601011}
   - component: {fileID: 2361849391469738426}
   - component: {fileID: 8813142263675814877}
+  - component: {fileID: 8031374252028646080}
   m_Layer: 0
   m_Name: boad canon
   m_TagString: Enemy
@@ -148,7 +149,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -197,7 +198,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5104fd1b0d87a4c4682ba641ee2c8451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyAnimation: {fileID: 8031374252028646080}
+  _enemyCollider: {fileID: 7494753825836601011}
+  healthPoint: 500
+  attackPoint: 10
+  speed: 0
+  isAttack: 0
+  coinValue: 20
+  healthBar: {fileID: 0}
+  startPos: {fileID: 0}
+  endPos: {fileID: 0}
   cannonAnimator: {fileID: 4337747421954419369}
+  enemyAnimation: {fileID: 8031374252028646080}
+--- !u!114 &8031374252028646080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5233782228179766028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc3ccbbce7354bc1bebca91c1509b4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2361849391469738426}
 --- !u!1 &5367440949167636614
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +398,7 @@ GameObject:
   - component: {fileID: 423398121474921392}
   - component: {fileID: 5410369045152062904}
   - component: {fileID: 6865530721230092688}
+  - component: {fileID: 6978010646883214714}
   m_Layer: 0
   m_Name: CannonBall
   m_TagString: Enemy
@@ -509,6 +535,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.09375
+--- !u!114 &6978010646883214714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6979526256888729892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fabcd64ac0644bff81e9d96b7ac5798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _circleCollider2D: {fileID: 6865530721230092688}
 --- !u!1 &8053898124238193328
 GameObject:
   m_ObjectHideFlags: 0
