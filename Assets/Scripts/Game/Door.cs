@@ -7,7 +7,9 @@ public class Door : MonoBehaviour
 {
     [SerializeField] private Collider2D doorCollider;
     //[SerializeField] private GameObject doorOpen;
-    private Animator Animator;
+    [SerializeField] private GameObject character;
+    [SerializeField] private GameObject doorConnect;
+    public static Animator Animator;
 
     private void Start()
     {
@@ -18,12 +20,27 @@ public class Door : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //open door
             doorCollider.enabled = false;
             Animator.SetBool("IsDoorOpen", true);
-            GameManager.Instance.OnComplete();
+            if (doorConnect != null)
+            {
+                doorConnect.GetComponent<Animator>().SetBool("IsDoorOpen", true);
+            }
+            
         }
     }
+
+    private void MovingWithDoor()
+    {
+        if(doorConnect != null)
+        {
+            var position = character.transform.position;
+            position = doorConnect.transform.position;
+            position.z = -0.35f;
+            character.transform.position = position;
+        }
+    }
+
     public void OpenDoorSuccess()
     {
         
