@@ -9,7 +9,7 @@ public class Door : MonoBehaviour
     //[SerializeField] private GameObject doorOpen;
     [SerializeField] private GameObject character;
     [SerializeField] private GameObject doorConnect;
-    public static Animator Animator;
+    private Animator Animator;
 
     private void Start()
     {
@@ -20,7 +20,8 @@ public class Door : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            doorCollider.enabled = false;
+            //doorCollider.enabled = false;
+            Debug.Log("Door Open");
             Animator.SetBool("IsDoorOpen", true);
             if (doorConnect != null)
             {

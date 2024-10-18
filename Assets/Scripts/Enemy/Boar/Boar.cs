@@ -65,18 +65,16 @@ public class Boar : MonoBehaviour
     {
         if (other.CompareTag("Player") && isAttack)
         {
-            _enemyAnimation.UpdateAnimation(EnemyState.Idle);
+            _enemyAnimation.UpdateAnimation(EnemyState.Attack);
             //CharacterManager.Instance.health -= attackPoint;
             isAttack = false;
-            CharacterManager.Instance.TakeDame();
-            FlipEnemy();
         }
         
         if (other.CompareTag("HitAttack"))
         {
             Debug.Log("HitAttack");
             isAttack = false;
-            _enemyCollider.enabled = false;
+            //_enemyCollider.enabled = false;
             _enemyAnimation.UpdateAnimation(EnemyState.Hit);
             //healthPoint -= OppAttackPoint;
             healthPoint -= CharacterManager.Instance.attackPoint;
@@ -87,6 +85,16 @@ public class Boar : MonoBehaviour
             }
         }
     }
+
+    private void OnEndAttack()
+    {
+        CharacterManager.Instance.TakeDame();
+        FlipEnemy();
+        _enemyAnimation.UpdateAnimation(EnemyState.Walk);
+        isAttack = true;
+        Move();
+    }
+
     public void HitComplete()
     {
         _enemyAnimation.UpdateAnimation(EnemyState.Walk);
