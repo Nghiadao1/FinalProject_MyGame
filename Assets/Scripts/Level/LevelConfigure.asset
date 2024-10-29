@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f489474db40f64e69b2a002e227e0781, type: 3}
+  m_Name: LevelConfigure
+  m_EditorClassIdentifier: 
+  mapConfigures:
+  - mapName: level 1
+    mapPrefab: {fileID: 6196933726503532583, guid: aba72bce4e9c04b8192f62c3d4280b52, type: 3}
+    mapPosition: {x: -0.3654362, y: -2.081679, z: 0.4270595}
+    mapRotation: {x: 0, y: 0, z: 0}
+    mapScale: {x: 1, y: 1, z: 1}
+    isMapActive: 0
+    CharatorPosition: {x: -4.5, y: 2, z: -1}
+  - mapName: level 2
+    mapPrefab: {fileID: 4504761710096908945, guid: 8f1b89ed42d974f86adf15ffe29a6261, type: 3}
+    mapPosition: {x: -0.3654362, y: -2.081679, z: 0.4270595}
+    mapRotation: {x: 0, y: 0, z: 0}
+    mapScale: {x: 1, y: 1, z: 1}
+    isMapActive: 0
+    CharatorPosition: {x: -8.97, y: 3.5, z: -1}
