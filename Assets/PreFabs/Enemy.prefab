@@ -150,7 +150,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -174,7 +174,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3192532435970698434}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
@@ -205,7 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35994fac2885643a69ee0680828ce512, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyAnimation: {fileID: 889816480740864693}
   _enemyCollider: {fileID: 3598827092068033593}
   healthPoint: 150
   attackPoint: 0

@@ -7,6 +7,7 @@ public class GameManager : TemporaryMonoSingleton<GameManager>
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 60;
         Invoke("HideLoading", 2f);
     }
     

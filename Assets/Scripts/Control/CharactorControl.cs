@@ -14,6 +14,7 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
     private CharacterManager characterManager;
     public bool isMove;
     public Button HitButon;
+    public Button JumpButton;
     private void Start()
     {
         Init();
@@ -26,6 +27,7 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
     
     public void Move(float x)
     {
+        JumpButton.interactable = true;
         OnMove?.Invoke(x, true);
     }
     
@@ -36,6 +38,7 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
 
     public void Jump()
     {
+        JumpButton.interactable = false;
         OnJump?.Invoke(true);
     }
     public void Attack()

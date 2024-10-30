@@ -11,7 +11,6 @@ public class CannonBall : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             CharacterManager.Instance.TakeDame();
-            _circleCollider2D.enabled = false;
             gameObject.SetActive(false);
             
         }
