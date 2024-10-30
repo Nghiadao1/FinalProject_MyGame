@@ -27,8 +27,10 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
     
     public void Move(float x)
     {
-        JumpButton.interactable = true;
+        
         OnMove?.Invoke(x, true);
+        if(JumpButton.interactable) return;
+        JumpButton.interactable = true;
     }
     
     public void StopMove()
