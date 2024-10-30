@@ -40,6 +40,7 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
     {
         JumpButton.interactable = false;
         OnJump?.Invoke(true);
+        Invoke("ActiveButtonJump", 0.75f);
     }
     public void Attack()
     {
@@ -53,5 +54,11 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
     public void Shield()
     {
         OnShield?.Invoke(true);
+    }
+    
+    private void ActiveButtonJump()
+    {
+        if(JumpButton.interactable) return;
+        JumpButton.interactable = true;
     }
 }
