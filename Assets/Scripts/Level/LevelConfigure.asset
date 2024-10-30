@@ -27,3 +27,31 @@ MonoBehaviour:
     mapScale: {x: 1, y: 1, z: 1}
     isMapActive: 0
     CharatorPosition: {x: -8.97, y: 3.5, z: -1}
+  - mapName: level 3
+    mapPrefab: {fileID: 4504761710096908945, guid: 7132233f296c745dcb9339da6967520a, type: 3}
+    mapPosition: {x: -0.3654362, y: -2.081679, z: 0.4270595}
+    mapRotation: {x: 0, y: 0, z: 0}
+    mapScale: {x: 1, y: 1, z: 1}
+    isMapActive: 0
+    CharatorPosition: {x: -8.97, y: 3.5, z: -1}
+  - mapName: level 4
+    mapPrefab: {fileID: 4504761710096908945, guid: fc186ca9ae7e34de0a700f0cd7622797, type: 3}
+    mapPosition: {x: -0.3654362, y: -2.081679, z: 0.4270595}
+    mapRotation: {x: 0, y: 0, z: 0}
+    mapScale: {x: 1, y: 1, z: 1}
+    isMapActive: 0
+    CharatorPosition: {x: -8.97, y: 3.5, z: -1}
+  - mapName: level 5
+    mapPrefab: {fileID: 4504761710096908945, guid: 77fd70ca44e754722b00d5e6f8839e14, type: 3}
+    mapPosition: {x: -0.3654362, y: -2.081679, z: 0.4270595}
+    mapRotation: {x: 0, y: 0, z: 0}
+    mapScale: {x: 1, y: 1, z: 1}
+    isMapActive: 0
+    CharatorPosition: {x: -8.97, y: 3.5, z: -1}
+  - mapName: level 6
+    mapPrefab: {fileID: 4504761710096908945, guid: 326a079b374cf4ca88efa2db5081edd5, type: 3}
+    mapPosition: {x: -0.3654362, y: -2.081679, z: 0.4270595}
+    mapRotation: {x: 0, y: 0, z: 0}
+    mapScale: {x: 1, y: 1, z: 1}
+    isMapActive: 0
+    CharatorPosition: {x: -8.97, y: 3.5, z: -1}

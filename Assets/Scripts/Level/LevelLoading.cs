@@ -18,7 +18,7 @@ public class LevelLoading : MonoBehaviour
         var targetMap = levelConfigure.mapConfigures[LevelIndex];
         var map = Instantiate(targetMap.mapPrefab, targetMap.mapPosition, Quaternion.Euler(targetMap.mapRotation));
         map.transform.localScale = targetMap.mapScale;
-        map.SetActive(true);
+        //map.SetActive(true);
         
         var position = targetMap.CharatorPosition;
         character.transform.position = position;

@@ -14,6 +14,7 @@ public class Door : MonoBehaviour
     private void Start()
     {
         Animator = gameObject.GetComponent<Animator>();
+        character = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
