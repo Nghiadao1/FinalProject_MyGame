@@ -32,7 +32,11 @@ public class UpgradeShop : MonoBehaviour
     {
         data = GetDataUpgrade(upgradeType);
         _currentValue = data;
-        valueText.text = "+ " + _currentValue.ToString();
+        var configValue = 0;
+        if(upgradeType == UpgradeType.health) configValue = 100;
+        else if(upgradeType == UpgradeType.attackPoint) configValue = 5;
+        else if(upgradeType == UpgradeType.DEF) configValue = 0;
+        valueText.text = "+ " + (_currentValue + configValue).ToString();
     }
     public void Upgrade()
     {

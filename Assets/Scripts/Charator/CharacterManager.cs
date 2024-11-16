@@ -25,33 +25,13 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     private int healthUpgrade => UpgradeManager.GetDataUpgrade(UpgradeType.health);
     private int atackUpgrade => UpgradeManager.GetDataUpgrade(UpgradeType.attackPoint);
     private int shieldUpgrade => UpgradeManager.GetDataUpgrade(UpgradeType.DEF);
-    public float jumpForce
-    {
-        get => charactorInfo.jumpForce;
-        set => charactorInfo.jumpForce = value;
-    }
-    public float speed
-    {
-        get => charactorInfo.speed;
-        set => charactorInfo.speed = value;
-    }
+    public float jumpForce;
+    public float speed;
     public int health;
-    // {
-    //     get => 
-    //     set => charactorInfo.health  = value;
-    // }
-    public int attackPoint
-    {
-        get => charactorInfo.attackPoint + atackUpgrade;
-        set => charactorInfo.attackPoint = value;
-    }
+    public int attackPoint;
 
     public float distanceJump;
-    public int shield
-    {
-        get => charactorInfo.shield + shieldUpgrade;
-        set => charactorInfo.shield = value;
-    }
+    public int shield;
 
     //Stage Character
     public bool isGrounded;
@@ -90,6 +70,10 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     private void InitInfo()
     {
         charactorInfo.SetDataDefault();
+        jumpForce = charactorInfo.jumpForce;
+        speed = charactorInfo.speed;
+        health = charactorInfo.health;
+        attackPoint = charactorInfo.attackPoint + atackUpgrade;
         health =(charactorInfo.health + healthUpgrade);
     }
     private void ActiveEvent()

@@ -963,7 +963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Cameras: []
-  m_EventSystem: {fileID: 0}
+  m_EventSystem: {fileID: 392529428}
 --- !u!4 &1042934996
 Transform:
   m_ObjectHideFlags: 0

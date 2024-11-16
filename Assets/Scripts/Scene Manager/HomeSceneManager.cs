@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class HomeSceneManager : MonoBehaviour
 {
+    private SoundManager soundManager => SoundManager.Instance;
+    //[SerializeField] private AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,11 @@ public class HomeSceneManager : MonoBehaviour
     private void HideLoading()
     {
         SceneManager.HideLoading();
+        EnableSound();
+    }
+    private void EnableSound()
+    {
+        soundManager.EnableMenuMusic(true);
     }
 
     
