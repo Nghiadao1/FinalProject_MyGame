@@ -771,7 +771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 139648887}
-  timeBegin: 3429
+  timeBegin: 300
   timeEnd: 0
 --- !u!114 &260115689
 MonoBehaviour:
