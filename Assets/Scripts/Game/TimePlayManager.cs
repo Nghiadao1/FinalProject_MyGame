@@ -13,9 +13,15 @@ public class TimePlayManager : MonoBehaviour
     private GameManager GameManager => GameManager.Instance;
     private void OnEnable()
     {
+        TimeItems.OnUseTimeItem += AddTime;
         StartCoroutine(CountDown());
     }
-    
+
+    private void OnDestroy()
+    {
+        TimeItems.OnUseTimeItem -= AddTime;
+    }
+
     private IEnumerator CountDown()
     {
         time = timeBegin;
@@ -28,6 +34,12 @@ public class TimePlayManager : MonoBehaviour
         //pause game
         GameManager.OnDefeat();
         
+    }
+    
+    private void AddTime()
+    {
+        time += 30;
+        timeText.text = time.ToString();
     }
     
 }
