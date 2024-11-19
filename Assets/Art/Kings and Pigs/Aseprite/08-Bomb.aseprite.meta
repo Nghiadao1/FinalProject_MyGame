@@ -350,88 +350,99 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: 08-Bomb_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 32
         width: 13
         height: 16
       spriteId: e58eba7c37c9a4ac684196a03ebc029e
-    - name: 08-Bomb_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 32
         width: 16
         height: 19
       spriteId: 24800074e0d2546898ae9a87181a51e7
-    - name: 08-Bomb_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 32
         width: 17
         height: 21
       spriteId: 2b5549105c4524f59912f86068eb1dc2
-    - name: 08-Bomb_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 33
         y: 32
         width: 15
         height: 21
       spriteId: 279baddd554024ea482cb1bcdf81f2e9
-    - name: 08-Bomb_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 34
         y: 32
         width: 14
         height: 21
       spriteId: 84a117172d42c47f6b9ac389cd7e2211
-    - name: 08-Bomb_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 29
         y: 30
         width: 22
         height: 22
       spriteId: 2b4b19938aeb04e4590bfdad048dc936
-    - name: 08-Bomb_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 21
         width: 40
         height: 40
       spriteId: d4fa74afa6ed54ea384bce48c118e30d
-    - name: 08-Bomb_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 16
         y: 17
         width: 48
         height: 47
       spriteId: ae4f6a859f4b94f94b23bb9a65f11343
-    - name: 08-Bomb_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 14
         y: 15
         width: 52
         height: 52
       spriteId: 71547dc68d2a74dd69f509a1504f539e
-    - name: 08-Bomb_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 19
         y: 34
         width: 45
         height: 35
       spriteId: b5a397e6b4c8f4c1a9ad3fbb5abceaef
-    - name: 08-Bomb_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 18
         y: 37

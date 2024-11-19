@@ -210,32 +210,36 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Fly_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 19
         width: 20
         height: 40
       spriteId: 50ac18388c8714e63859af3625a176de
-    - name: Fly_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 20
         width: 35
         height: 28
       spriteId: cb6d368e624634a2ebfd7fe17d37e7a3
-    - name: Fly_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 20
         y: 20
         width: 29
         height: 21
       spriteId: 02080c4d8a0184e80888fa05ffaa34dd
-    - name: Fly_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 21
         y: 20

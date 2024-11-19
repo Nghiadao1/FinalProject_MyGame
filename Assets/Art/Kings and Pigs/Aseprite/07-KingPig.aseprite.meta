@@ -770,256 +770,288 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: 07-KingPig_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 67beb5c06b2f94fa191135a44bca4f05
-    - name: 07-KingPig_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: fef270f46b45741dcb23cbfe5b2aa4fc
-    - name: 07-KingPig_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 9313cc16f305b4100a16dd1583f1fc57
-    - name: 07-KingPig_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: a4536679cdf26445a8b31ff8918dd861
-    - name: 07-KingPig_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 1c4ec11f00e074a68b4e6c0388d4de95
-    - name: 07-KingPig_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 0aaccdf3086a6479a86e1c4ebb77f942
-    - name: 07-KingPig_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 049805aab4c7e43328988e0fb04dd83b
-    - name: 07-KingPig_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: a10ebaa9914134803a36f23f53cf269c
-    - name: 07-KingPig_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 4e736c2dca5814ae69c1c50949989aee
-    - name: 07-KingPig_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 9f28131ca8ff140eb840b6d699de128f
-    - name: 07-KingPig_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: f943e8aa881fe4112a4ce74a397d70c1
-    - name: 07-KingPig_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 86451e12b421b423a8387de57f40f7e4
-    - name: 07-KingPig_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: e434ac9ee773b4ab882e471aeb5d5533
-    - name: 07-KingPig_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 765a8540a391f4855b69d8656b439574
-    - name: 07-KingPig_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: b27cdc451df954b2cb9f1b515ee26098
-    - name: 07-KingPig_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 90b6d6ccaa6c343139db71dcad071bd5
-    - name: 07-KingPig_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: c57a9d6d6cd5f414596c4ff0f3106923
-    - name: 07-KingPig_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 0141ae5940ac14493b73103a31a76e26
-    - name: 07-KingPig_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 4bc6fba76989841e79ce26874bf7f8d2
-    - name: 07-KingPig_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 238d887d65a824353acb7f4f2f492b3e
-    - name: 07-KingPig_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 1e6988529a7044312aae6af97a1521fa
-    - name: 07-KingPig_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 4ea9448cc9b1949bd9765e7645157506
-    - name: 07-KingPig_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: f1f68856833ca43d0be92a5c69e30980
-    - name: 07-KingPig_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: ec15e1c44d05445f2a0163ec0ceb2b22
-    - name: 07-KingPig_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: e56c967911e5348efba921da4ecd3730
-    - name: 07-KingPig_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 69764546ddd464fd18c1f4fbab97ab20
-    - name: 07-KingPig_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 774f72fa947e8400c85ba5edfcec9663
-    - name: 07-KingPig_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: a8a13c2f65c2949f6b880f2ffe9ff8ab
-    - name: 07-KingPig_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: e4af52f15612c4ed58fa84cf0cc80c04
-    - name: 07-KingPig_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: df57fed99f9ac41c1b28886f870726e3
-    - name: 07-KingPig_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: fc4237414cced424cb17860126d9a18b
-    - name: 07-KingPig_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0

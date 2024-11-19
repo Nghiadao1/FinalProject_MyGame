@@ -21,6 +21,7 @@ public class HomeSceneManager : MonoBehaviour
     private void EnableSound()
     {
         soundManager.EnableMenuMusic(true);
+        Debug.Log("EnableSound");
     }
 
     

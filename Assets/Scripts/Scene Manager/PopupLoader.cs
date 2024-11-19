@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PopupLoader : MonoBehaviour
 {
+    private SoundManager soundManager => SoundManager.Instance;
     public Scene targetScene;
     
     public void ShowPopup()
@@ -39,5 +40,9 @@ public class PopupLoader : MonoBehaviour
     public void HideLoading()
     {
         SceneManager.HideLoading();
+    }
+    public void PlaySoundGameMode()
+    {
+        soundManager.EnableMenuMusic(false);
     }
 }

@@ -310,72 +310,81 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: 06-PigHide_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: e51ae7236e80443b0ad6f532a2e2d909
-    - name: 06-PigHide_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 30efa1cf94b02474b907bd5ad76ef6af
-    - name: 06-PigHide_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 552b7ac6c531741ca8dcf5c4c56f50e9
-    - name: 06-PigHide_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 3e5fa302da7744df0bf9095ca854da63
-    - name: 06-PigHide_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: f3ac588fdc67c49218f70cee092cd8e8
-    - name: 06-PigHide_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 8e17806b106b04989a26da80862dace4
-    - name: 06-PigHide_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 4095479241c944979b0bb1b7e42d32c5
-    - name: 06-PigHide_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: a0083f400f2204a4f99649b3c930c611
-    - name: 06-PigHide_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0

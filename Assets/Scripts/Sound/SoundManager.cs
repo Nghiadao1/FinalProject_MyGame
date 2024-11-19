@@ -24,5 +24,6 @@ public class SoundManager : TemporaryMonoSingleton<SoundManager>
     {
         audioSourceMusic.clip = clip;
         audioSourceMusic.Play();
+        Debug.Log("PlayBackgroundMusic");
     }
 }

@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 344349426}
   - component: {fileID: 344349427}
+  - component: {fileID: 344349428}
   m_Layer: 0
   m_Name: SFX
   m_TagString: Untagged
@@ -251,6 +252,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &344349428
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344349425}
+  m_Enabled: 1
 --- !u!1 &758919660
 GameObject:
   m_ObjectHideFlags: 0

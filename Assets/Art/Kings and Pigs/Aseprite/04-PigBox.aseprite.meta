@@ -630,200 +630,225 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: 04-PigBox_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 9751566a0f0be449294b37bb7d9c8fa5
-    - name: 04-PigBox_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 78b6a5a55c2044cf1861d13a0cf97937
-    - name: 04-PigBox_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: a76b3550c28604f6ca6aee4adc28b20c
-    - name: 04-PigBox_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 05cc6e81e2ce144a5a8d25bb56d3934c
-    - name: 04-PigBox_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 57f5ec07fd20d4a9ea71bae75186646d
-    - name: 04-PigBox_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: db0ca99fac82e4e6ca04f765b97ddf0b
-    - name: 04-PigBox_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 1a74fd3f9509a4af38309ffa9e75a19a
-    - name: 04-PigBox_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 31c16b963adaa45d99e14fc33daefc50
-    - name: 04-PigBox_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: db7b7af2568174d5ab73aad98bd90dd7
-    - name: 04-PigBox_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 619f933ee1a184f82b7da542ed57b76f
-    - name: 04-PigBox_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 2c82592a45593431794ec183778691a0
-    - name: 04-PigBox_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 41e00eccd833d47bc8a957efb33e0f5d
-    - name: 04-PigBox_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 0e1d7c6f6c1304e58b87bdc25a6caa63
-    - name: 04-PigBox_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: c29c45c6689864a4c9b46108ca23aae1
-    - name: 04-PigBox_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 9158e608fa28f40a1b162aafd8b41365
-    - name: 04-PigBox_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: c5131a9890da84203a3ee242bedcaf19
-    - name: 04-PigBox_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: b8b43fc4db3bd48ff8aefa1247653944
-    - name: 04-PigBox_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: a25cd9b30fb7b4d41ac7ca3712e032ec
-    - name: 04-PigBox_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: f78476b145e5142ee82cb7e6a040dd4c
-    - name: 04-PigBox_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: c538436e7522344cfbeca5877a38c0d9
-    - name: 04-PigBox_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: cfcbca9832e234d8b90f928e2e841f07
-    - name: 04-PigBox_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 8c6b080cd278a4877b12fdab3d213766
-    - name: 04-PigBox_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: 0020078417dc741699b328a178d3de76
-    - name: 04-PigBox_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 80
         height: 80
       spriteId: b3fe16f63ff8f4c61afc92acfb8d5a0e
-    - name: 04-PigBox_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0

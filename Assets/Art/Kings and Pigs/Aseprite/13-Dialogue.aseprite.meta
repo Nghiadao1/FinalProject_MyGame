@@ -1130,400 +1130,450 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: 13-Dialogue_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: a6891ff475f074b5185fd32c4413dc1e
-    - name: 13-Dialogue_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: cf88c913d37664b9c8eb220fc8dba178
-    - name: 13-Dialogue_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 2750939fab05248a8bd1d139c169d8a3
-    - name: 13-Dialogue_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 81c70c4c20f7549248bab071fdec4ab9
-    - name: 13-Dialogue_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 727ef3530f6a34e94813a46955ed9f16
-    - name: 13-Dialogue_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: cc2365681c37a4c8f9644f57ed18b638
-    - name: 13-Dialogue_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 091e29a0aaa884c96b285a6a948405d6
-    - name: 13-Dialogue_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: a35b29463a18548f28d760f505ebfffc
-    - name: 13-Dialogue_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 5704b96b8074f41bc81e84bde7ffde05
-    - name: 13-Dialogue_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 2c4b7d8778b864d91bc60034013dd3f6
-    - name: 13-Dialogue_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 31e624cc4fbc349f1a3eeb737d7b8dac
-    - name: 13-Dialogue_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 404051cab31364fa1ad782f84976714d
-    - name: 13-Dialogue_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: b6c07aecc3c6043a68f06b4bb70fdf90
-    - name: 13-Dialogue_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 80ae65e0d2c9544c3bf11f2a5ee6d1e7
-    - name: 13-Dialogue_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 24cfef2a6707d4bd0abad8b6c8814c53
-    - name: 13-Dialogue_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 65614ca29a9b549e590ec243ceef2c8f
-    - name: 13-Dialogue_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: cf7e69bbaa6a34b2ca5368715966f47a
-    - name: 13-Dialogue_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: fa50acd2d059348799d7907fd8cee836
-    - name: 13-Dialogue_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 9f308a6305ea84ef084109b04db9005d
-    - name: 13-Dialogue_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 2c9b10161017e40489660b638cdba4e8
-    - name: 13-Dialogue_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 5320d791f2b2546ec9e806b722d46416
-    - name: 13-Dialogue_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: c562c6f2c92084b24a67ce6439fcfe32
-    - name: 13-Dialogue_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 6dc908a7c5c9d42ca859b53fa22fc719
-    - name: 13-Dialogue_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: c834e4e4c740344de9bcfeec613b59c2
-    - name: 13-Dialogue_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 433e8e55bd9d24e5b80cb74f12ec5d45
-    - name: 13-Dialogue_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 6381b846ccaa84f5eae827c20f4f909d
-    - name: 13-Dialogue_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 00b879d9d304c4f0d9ff1bb41b0dabb2
-    - name: 13-Dialogue_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 264860775c31b488cbecd7f909fdde90
-    - name: 13-Dialogue_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 5ea1dce4586484b848721617bf2450e0
-    - name: 13-Dialogue_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: eeec501db789c4dafad0d28909c741ef
-    - name: 13-Dialogue_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 4101e666161254395af2fecd639903cb
-    - name: 13-Dialogue_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: be716ac83af8049c0af397556b361370
-    - name: 13-Dialogue_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 833683b0eb56d4f3a897968de46f90e0
-    - name: 13-Dialogue_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 9622450ca1e954da294c636bbe43723e
-    - name: 13-Dialogue_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: fb30cf46a145d4fe38ee559f3f2a1c60
-    - name: 13-Dialogue_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 162b361a1bb7145f88a96beb57afd03f
-    - name: 13-Dialogue_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: e87fc934ab049495aa664e428b4be412
-    - name: 13-Dialogue_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 596fb4af9a61940feb03a60b4b36c2ab
-    - name: 13-Dialogue_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: a6fa4646434bb4923af7bf77281f48f6
-    - name: 13-Dialogue_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 7b3d7529173c04c5e800e66142860e04
-    - name: 13-Dialogue_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: f6c7dc57aaf6443f79ae86d3f4958462
-    - name: 13-Dialogue_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: ee5359a7764b24b92b69f5ea000f7373
-    - name: 13-Dialogue_Frame_42
+    - name: Frame_42
       frameIndex: 42
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 40230ac389b9140a9a1220d4a8f1d7d6
-    - name: 13-Dialogue_Frame_43
+    - name: Frame_43
       frameIndex: 43
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: ecf247f0ac7df437281227a27945f209
-    - name: 13-Dialogue_Frame_44
+    - name: Frame_44
       frameIndex: 44
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 6879157471efb40c4ad5078b355c3d8e
-    - name: 13-Dialogue_Frame_45
+    - name: Frame_45
       frameIndex: 45
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: f98add252bfb14c24ba7e44f46a35d82
-    - name: 13-Dialogue_Frame_46
+    - name: Frame_46
       frameIndex: 46
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: ac95c1ffc775d47caba9395e7f21b979
-    - name: 13-Dialogue_Frame_47
+    - name: Frame_47
       frameIndex: 47
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: f8654daa9850240c2b34e83e4e0a8513
-    - name: 13-Dialogue_Frame_48
+    - name: Frame_48
       frameIndex: 48
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: e707a2f14070346e1a4acdc78510a0b6
-    - name: 13-Dialogue_Frame_49
+    - name: Frame_49
       frameIndex: 49
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0

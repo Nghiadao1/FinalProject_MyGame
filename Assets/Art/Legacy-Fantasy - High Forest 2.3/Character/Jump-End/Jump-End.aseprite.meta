@@ -190,24 +190,27 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Jump-End_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 13
         y: 1
         width: 25
         height: 48
       spriteId: 8a076f5d777a1480b8084da57dfe0e91
-    - name: Jump-End_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0
         width: 35
         height: 41
       spriteId: 366530a9d1f3040fc88a6f59baab33eb
-    - name: Jump-End_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0

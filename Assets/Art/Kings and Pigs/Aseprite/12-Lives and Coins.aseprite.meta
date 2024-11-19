@@ -970,336 +970,378 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: 12-Lives and Coins_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 4adeee59f48734f4da5cef6577b3b049
-    - name: 12-Lives and Coins_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: a817a7e0c9e9240a4ac1e0ec4dad78a2
-    - name: 12-Lives and Coins_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: f964f02bc3ce64d6495bcf60c6a1ca02
-    - name: 12-Lives and Coins_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: af2c3edebfd65490b8056041b6d0faa0
-    - name: 12-Lives and Coins_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 65341ae1608e744bf8bf516b2d7e0803
-    - name: 12-Lives and Coins_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 04ab064d700a5410887226f140167a85
-    - name: 12-Lives and Coins_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 01310a9e88ae94328a4b753ea074f9cd
-    - name: 12-Lives and Coins_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: c01daf5aeeade4a899ec90b83c36c491
-    - name: 12-Lives and Coins_Frame_8
+    - name: Frame_8
       frameIndex: 8
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: ebdf14f7d73184ce89cbbad4fda42dd2
-    - name: 12-Lives and Coins_Frame_9
+    - name: Frame_9
       frameIndex: 9
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 650bc55dffada48ca9d4429313309ede
-    - name: 12-Lives and Coins_Frame_10
+    - name: Frame_10
       frameIndex: 10
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 281e0e27069c0414bbcf200f5035b197
-    - name: 12-Lives and Coins_Frame_11
+    - name: Frame_11
       frameIndex: 11
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: b4b1b40a2cef54c6d80a7ac0a2210812
-    - name: 12-Lives and Coins_Frame_12
+    - name: Frame_12
       frameIndex: 12
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 56f423634e8284610813a4a98a21d481
-    - name: 12-Lives and Coins_Frame_13
+    - name: Frame_13
       frameIndex: 13
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 7bcdaaa99596c49a99ffd25597b7e3af
-    - name: 12-Lives and Coins_Frame_14
+    - name: Frame_14
       frameIndex: 14
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 0dcb636d8606f46f1904856a7c662729
-    - name: 12-Lives and Coins_Frame_15
+    - name: Frame_15
       frameIndex: 15
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 834adfb37aa2f4608bcc4d175af9c289
-    - name: 12-Lives and Coins_Frame_16
+    - name: Frame_16
       frameIndex: 16
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 636fc747e4ac248db93734dccc85f05e
-    - name: 12-Lives and Coins_Frame_17
+    - name: Frame_17
       frameIndex: 17
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: e0b6aa4e570bb4e2fa0f3c894b200137
-    - name: 12-Lives and Coins_Frame_18
+    - name: Frame_18
       frameIndex: 18
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 92443f29753a94bee9285a051de7bf29
-    - name: 12-Lives and Coins_Frame_19
+    - name: Frame_19
       frameIndex: 19
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 3494af5edd0a440a285b24bfee439ab0
-    - name: 12-Lives and Coins_Frame_20
+    - name: Frame_20
       frameIndex: 20
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: dfc3d7a7e6830403e9e28d0447ac1497
-    - name: 12-Lives and Coins_Frame_21
+    - name: Frame_21
       frameIndex: 21
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 21c082c5dcc3847fcbcd63c451b69c85
-    - name: 12-Lives and Coins_Frame_22
+    - name: Frame_22
       frameIndex: 22
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: bcf4e2d284c7e42d9b8b1e3255d01a27
-    - name: 12-Lives and Coins_Frame_23
+    - name: Frame_23
       frameIndex: 23
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: f62b15517a1ba44feaecca00d415e3f1
-    - name: 12-Lives and Coins_Frame_24
+    - name: Frame_24
       frameIndex: 24
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 47a928802e349476cbcd377671b488ed
-    - name: 12-Lives and Coins_Frame_25
+    - name: Frame_25
       frameIndex: 25
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: e779bf438b6424b5fbc070d3791afd89
-    - name: 12-Lives and Coins_Frame_26
+    - name: Frame_26
       frameIndex: 26
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: ed100ae062a1d4c74b1b89d6509c5f45
-    - name: 12-Lives and Coins_Frame_27
+    - name: Frame_27
       frameIndex: 27
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: a3a6d88946a4e472ea33cb3840db9d81
-    - name: 12-Lives and Coins_Frame_28
+    - name: Frame_28
       frameIndex: 28
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: d0c01846f23ac477bba9153d00f63fe0
-    - name: 12-Lives and Coins_Frame_29
+    - name: Frame_29
       frameIndex: 29
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 6b5fccfe41348448fa244d2bc3d4d3e4
-    - name: 12-Lives and Coins_Frame_30
+    - name: Frame_30
       frameIndex: 30
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 3e2b3126d23b841cd80944876e01c186
-    - name: 12-Lives and Coins_Frame_31
+    - name: Frame_31
       frameIndex: 31
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 37453daa1be8846769f66278e466032c
-    - name: 12-Lives and Coins_Frame_32
+    - name: Frame_32
       frameIndex: 32
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 8e53d4f26364a482494178ca99cea62c
-    - name: 12-Lives and Coins_Frame_33
+    - name: Frame_33
       frameIndex: 33
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 8a875b8618de04f0c872250be352bdfd
-    - name: 12-Lives and Coins_Frame_34
+    - name: Frame_34
       frameIndex: 34
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: d3b03aeff119046fda29cc089efeccf7
-    - name: 12-Lives and Coins_Frame_35
+    - name: Frame_35
       frameIndex: 35
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: e974f526d29574080a5cff89963e005e
-    - name: 12-Lives and Coins_Frame_36
+    - name: Frame_36
       frameIndex: 36
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: efc2b09d45f484368b5b08cc6abc787a
-    - name: 12-Lives and Coins_Frame_37
+    - name: Frame_37
       frameIndex: 37
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 645efcd1024e1453cb0745fceb53f1d3
-    - name: 12-Lives and Coins_Frame_38
+    - name: Frame_38
       frameIndex: 38
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 8c1b8ded943e7414bad59dc932f7615c
-    - name: 12-Lives and Coins_Frame_39
+    - name: Frame_39
       frameIndex: 39
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 979bf3104a74548358f4e096e9d0f088
-    - name: 12-Lives and Coins_Frame_40
+    - name: Frame_40
       frameIndex: 40
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
         width: 96
         height: 96
       spriteId: 235945938684f4aa6a3896720e22de8b
-    - name: 12-Lives and Coins_Frame_41
+    - name: Frame_41
       frameIndex: 41
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0

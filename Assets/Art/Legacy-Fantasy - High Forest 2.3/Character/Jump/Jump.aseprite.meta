@@ -290,64 +290,72 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Jump_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 5
         y: 3
         width: 33
         height: 58
       spriteId: d5570894613944bc4b1fd815713c26ac
-    - name: Jump_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 7
         y: 5
         width: 31
         height: 55
       spriteId: b6e7a8e8502fe4fa59bb0b7f0d71ece6
-    - name: Jump_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 2
         width: 30
         height: 57
       spriteId: 1013836db7e504db49f09de268718f86
-    - name: Jump_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 2
         width: 29
         height: 55
       spriteId: a4a9ff5fafbf4458d8439dff6e0e9733
-    - name: Jump_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 8
         y: 5
         width: 29
         height: 52
       spriteId: 3ac89074251184d8bb66444695e8abd5
-    - name: Jump_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 9
         y: 6
         width: 27
         height: 51
       spriteId: 7600115bf7bbf4f8e9048e4aa24f53d3
-    - name: Jump_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 5
         width: 25
         height: 53
       spriteId: 42c48cfbd4bf04655b27ac3724347faa
-    - name: Jump_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 5

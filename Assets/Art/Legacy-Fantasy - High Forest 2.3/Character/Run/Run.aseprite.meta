@@ -290,64 +290,72 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Run_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 28
         y: 13
         width: 32
         height: 49
       spriteId: 9e4b1b5cb8ca543b8a963ed1b75f4972
-    - name: Run_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 26
         y: 14
         width: 34
         height: 49
       spriteId: c3d24c7931c3248a8aabee9cbc5df130
-    - name: Run_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 30
         y: 12
         width: 30
         height: 49
       spriteId: c70025596d4b54f0d87632c81bd76a3a
-    - name: Run_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 32
         y: 13
         width: 28
         height: 49
       spriteId: 0e2f9419bf9894a53ae44e1d8d78a67e
-    - name: Run_Frame_4
+    - name: Frame_4
       frameIndex: 4
+      additiveSortOrder: 0
       cellRect:
         x: 28
         y: 14
         width: 32
         height: 49
       spriteId: 203077ff7d1ac422dbb50a95aeada83b
-    - name: Run_Frame_5
+    - name: Frame_5
       frameIndex: 5
+      additiveSortOrder: 0
       cellRect:
         x: 28
         y: 15
         width: 32
         height: 49
       spriteId: d9e3ec706006c4b4d8583c6f3e91f206
-    - name: Run_Frame_7
+    - name: Frame_7
       frameIndex: 7
+      additiveSortOrder: 0
       cellRect:
         x: 31
         y: 13
         width: 29
         height: 49
       spriteId: c461a40a6eacb473287b7e7832b4c07e
-    - name: Run_Frame_6
+    - name: Frame_6
       frameIndex: 6
+      additiveSortOrder: 0
       cellRect:
         x: 32
         y: 12

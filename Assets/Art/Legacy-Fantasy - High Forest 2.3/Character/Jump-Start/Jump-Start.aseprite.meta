@@ -210,32 +210,36 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: Jump-Start_Frame_0
+    - name: Frame_0
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 0
         width: 35
         height: 34
       spriteId: 86e97aeaf11064fba85360a9010fa5f4
-    - name: Jump-Start_Frame_1
+    - name: Frame_1
       frameIndex: 1
+      additiveSortOrder: 0
       cellRect:
         x: 11
         y: 0
         width: 35
         height: 40
       spriteId: d849cfa97fc0f44968a614c338e0d19f
-    - name: Jump-Start_Frame_2
+    - name: Frame_2
       frameIndex: 2
+      additiveSortOrder: 0
       cellRect:
         x: 12
         y: 1
         width: 23
         height: 57
       spriteId: 12661b7b46b984020994851cc64ac30d
-    - name: Jump-Start_Frame_3
+    - name: Frame_3
       frameIndex: 3
+      additiveSortOrder: 0
       cellRect:
         x: 5
         y: 2
