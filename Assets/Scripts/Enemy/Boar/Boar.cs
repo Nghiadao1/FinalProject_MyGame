@@ -9,6 +9,7 @@ public class Boar : MonoBehaviour
 {
     public static Action<int> OnCoinCollected = delegate {  };
     //private CharacterManager _characterManager => CharacterManager.Instance;
+    private SFXManager sfxManager => SFXManager.Instance;
     private EnemyAnimation _enemyAnimation;
     [SerializeField] public Collider2D _enemyCollider;
     public int healthPoint;
@@ -65,6 +66,7 @@ public class Boar : MonoBehaviour
     {
         if (other.CompareTag("Player") && isAttack)
         {
+            sfxManager.PlaySFX(SFXName.Attack);
             _enemyAnimation.UpdateAnimation(EnemyState.Attack);
             //CharacterManager.Instance.health -= attackPoint;
             isAttack = false;
@@ -72,18 +74,23 @@ public class Boar : MonoBehaviour
         
         if (other.CompareTag("HitAttack"))
         {
+            sfxManager.PlaySFX(SFXName.Hit);
             Debug.Log("HitAttack");
             isAttack = false;
             //_enemyCollider.enabled = false;
             _enemyAnimation.UpdateAnimation(EnemyState.Hit);
             //healthPoint -= OppAttackPoint;
             healthPoint -= CharacterManager.Instance.attackPoint;
-            if (healthPoint <= 0)
-            {
-                OnCoinCollected(coinValue);
-                Destroy(gameObject);
-            }
+            BoardDie();
         }
+    }
+
+    public virtual void BoardDie()
+    {
+        if (healthPoint > 0) return;
+        sfxManager.PlaySFX(SFXName.Die);
+        OnCoinCollected(coinValue);
+        Destroy(gameObject);
     }
 
     private void OnEndAttack()

@@ -4673,7 +4673,7 @@ GameObject:
   - component: {fileID: 5112747862491013704}
   - component: {fileID: 4335333377171632493}
   - component: {fileID: 5633653238796276266}
-  - component: {fileID: 6628218389355976010}
+  - component: {fileID: 8288407802100483221}
   - component: {fileID: 7448539878262122061}
   - component: {fileID: 1850895376969521651}
   m_Layer: 0
@@ -4823,7 +4823,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6628218389355976010
+--- !u!114 &8288407802100483221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4832,15 +4832,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5583087288665121403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35994fac2885643a69ee0680828ce512, type: 3}
+  m_Script: {fileID: 11500000, guid: 440828d3d75c745e681154d3a0e66760, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyCollider: {fileID: 5478616342384123327}
-  healthPoint: 150
+  healthPoint: 1000
   attackPoint: 0
   speed: 1
   isAttack: 0
-  coinValue: 20
+  coinValue: 100
   healthBar: {fileID: 0}
   startPos: {fileID: 2141261346286943726}
   endPos: {fileID: 422292797334445591}

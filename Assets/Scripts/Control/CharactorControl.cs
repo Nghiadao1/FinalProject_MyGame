@@ -15,6 +15,7 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
     public bool isMove;
     public Button HitButon;
     public Button JumpButton;
+    public Button SkillButton;
     private void Start()
     {
         Init();
@@ -51,7 +52,9 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
     }
     public void Skill()
     {
+        SkillButton.interactable = false;
         OnSkill?.Invoke(true);
+        Invoke("ActiveButtonSkill", 5f);
     }
     public void Shield()
     {
@@ -62,5 +65,10 @@ public class CharactorControl : TemporaryMonoSingleton<CharactorControl>
     {
         if(JumpButton.interactable) return;
         JumpButton.interactable = true;
+    }
+    private void ActiveButtonSkill()
+    {
+        if(SkillButton.interactable) return;
+        SkillButton.interactable = true;
     }
 }

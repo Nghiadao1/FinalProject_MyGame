@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 5740451072589074417}
   - component: {fileID: 1046900392651553124}
   - component: {fileID: 6767828634864547074}
+  - component: {fileID: 5528824819101011219}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -316,6 +317,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5528824819101011219}
+        m_TargetAssemblyTypeName: SFXPlay, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6767828634864547074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +342,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetScene: 11
+--- !u!114 &5528824819101011219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426503392649161526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a40e363eee3fe4302a646f875a1af8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxName: 10
 --- !u!1 &699738794475588803
 GameObject:
   m_ObjectHideFlags: 0
