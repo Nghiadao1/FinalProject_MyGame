@@ -11,6 +11,7 @@ public class PlayfabConnect : TemporaryMonoSingleton<PlayfabConnect>
     private string passWord;
     private string email;
     public bool isLogin;
+    public bool isLoginFailed;
     public void Login(string username, string password)
     {
         userName = username;
@@ -66,5 +67,8 @@ public class PlayfabConnect : TemporaryMonoSingleton<PlayfabConnect>
         Debug.LogError("Here's some debug information:");
         Debug.LogError(error.GenerateErrorReport());
         isLogin = false;
+        SceneManager.HideLoading();
+        SceneManager.ShowPopup(Scene.Login);
+        isLoginFailed = !isLogin;
     }
 }

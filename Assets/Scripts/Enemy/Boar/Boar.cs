@@ -90,7 +90,16 @@ public class Boar : MonoBehaviour
         if (healthPoint > 0) return;
         sfxManager.PlaySFX(SFXName.Die);
         OnCoinCollected(coinValue);
-        Destroy(gameObject);
+        // enemy die physics
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
+        _rigidbody2D.gravityScale = 1;
+        _rigidbody2D.AddForce(Vector2.up * 5, ForceMode2D.Impulse);
+        _rigidbody2D.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
+        _enemyCollider.enabled = false;
+        //_enemyAnimation.UpdateAnimation(EnemyState.Die);
+        Destroy(gameObject, 1f);
+        //Destroy(gameObject);
     }
 
     private void OnEndAttack()

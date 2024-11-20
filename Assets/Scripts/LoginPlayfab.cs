@@ -12,10 +12,17 @@ public class LoginPlayfab : MonoBehaviour
     public TMP_InputField email;
     public TMP_InputField userNameRegister;
     public TMP_InputField passwordRegister;
-
+    public GameObject notification;
+    private bool isLoginFailed => playfabConnect.isLoginFailed;
     private void OnEnable()
     {
         InitLogin();
+        if (playfabConnect.isLogin)
+        {
+            notification.SetActive(false);
+            return;
+        }
+        notification.SetActive(isLoginFailed);
     }
 
     public void Login()
