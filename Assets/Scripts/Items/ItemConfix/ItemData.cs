@@ -6,6 +6,14 @@ using UnityEngine;
 public class ItemData : ScriptableObject
 {
     public ItemShop[] itemShops;
+
+    public void ResetData()
+    {
+        foreach (var t in itemShops)
+        {
+            t.count = 0;
+        }
+    }
 }
 [Serializable]
 public class ItemShop

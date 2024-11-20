@@ -42,6 +42,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: ac1d053ee0a484c028810e436053c095
   - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 6afb96a52d69a427ea6964ed1c28c65a
+  - enabled: 1
     path: Assets/Scenes/CheatScene.unity
     guid: df5df2f6ed9a24ae99942ead187eead2
   m_configObjects:

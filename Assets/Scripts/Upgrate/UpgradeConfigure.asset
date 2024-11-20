@@ -16,12 +16,12 @@ MonoBehaviour:
   - upgradeType: 2
     price: 100
     value: 5
-    data: 50
+    data: 0
   - upgradeType: 3
     price: 100
     value: 1
-    data: 42
+    data: 0
   - upgradeType: 4
     price: 100
     value: 10
-    data: 514
+    data: 0

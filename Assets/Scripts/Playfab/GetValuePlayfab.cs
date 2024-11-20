@@ -6,11 +6,18 @@ public class GetValuePlayfab : TemporaryMonoSingleton<GetValuePlayfab>
 {
     PlayfabManager PlayfabManager => PlayfabManager.Instance;
     private string value;
-    
-    private void Start()
+    private void Awake()
     {
-        Invoke("GetCoins",0.5f);
+        PlayfabConnect.OnloginSuccess += GetCoins;
     }
+    private void OnDestroy()
+    {
+        PlayfabConnect.OnloginSuccess -= GetCoins;
+    }
+    // private void Start()
+    // {
+    //     Invoke("GetCoins",0.5f);
+    // }
 
     private void GetCoins()
     {
@@ -29,6 +36,8 @@ public class GetValuePlayfab : TemporaryMonoSingleton<GetValuePlayfab>
             (error) =>
             {
                 Debug.Log(error);
+                //if not found key create new key
+                PlayfabManager.SavePlayerData(key, "1000");
             });
     }
 }

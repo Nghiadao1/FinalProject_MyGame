@@ -4517,6 +4517,8 @@ namespace PlayFab.ClientModels
         /// PlayFab username for the account.
         /// </summary>
         public string Username;
+
+        public bool CreateAccount;
     }
 
     /// <summary>

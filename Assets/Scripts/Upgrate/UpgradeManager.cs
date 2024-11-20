@@ -9,9 +9,21 @@ public class UpgradeManager : TemporaryMonoSingleton<UpgradeManager>
     private PlayfabManager PlayfabManager => PlayfabManager.Instance;
     public UpgradeConfigure upgradeConfigure;
     public Upgrade[] upgrades;
-
-    private void Start()
+    
+    private void Awake()
     {
+        PlayfabConnect.OnloginSuccess += LoadUserData;
+    }
+    private void OnDestroy()
+    {
+        PlayfabConnect.OnloginSuccess -= LoadUserData;
+    }
+    
+    
+    
+    private void LoadUserData()
+    {
+        upgradeConfigure.ResetData();
         upgrades = upgradeConfigure.upgrades;
         StartCoroutine(LoadDataUpgrade());
     }
@@ -29,7 +41,8 @@ public class UpgradeManager : TemporaryMonoSingleton<UpgradeManager>
                 },
                 (error) =>
                 {
-                    Debug.Log(error);
+                    //if not found key create new key
+                    PlayfabManager.SavePlayerData(key, upgrades[i].data.ToString());
                 });
             yield return new WaitForSeconds(0.5f);
         }

@@ -45,4 +45,15 @@ public class PopupLoader : MonoBehaviour
     {
         soundManager.EnableMenuMusic(false);
     }
+    
+    public void CheckLogin()
+    {
+        //if not login show login panel
+        if (!PlayfabConnect.Instance.isLogin)
+        {
+            ShowPopup(Scene.Login);
+            return;
+        }
+        ShowPopup();
+    }
 }

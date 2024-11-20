@@ -6,6 +6,15 @@ using UnityEngine;
 public class UpgradeConfigure : ScriptableObject
 {
     public Upgrade[] upgrades;
+    
+    //reset data of upgrade = 0
+    public void ResetData()
+    {
+        foreach (var t in upgrades)
+        {
+            t.data = 0;
+        }
+    }
 }
 [Serializable]
 public class Upgrade

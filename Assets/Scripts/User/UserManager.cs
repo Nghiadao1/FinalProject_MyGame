@@ -10,8 +10,21 @@ public class UserManager : TemporaryMonoSingleton<UserManager>
     public ItemData ItemData;
     public ItemShop[] itemShops;
     public string coins;
+    
+    
+    
     private void Awake()
     {
+        PlayfabConnect.OnloginSuccess += LoadUserData;
+    }
+    private void OnDestroy()
+    {
+        PlayfabConnect.OnloginSuccess -= LoadUserData;
+    }
+
+    private void LoadUserData()
+    {
+        ItemData.ResetData();
         itemShops = new ItemShop[ItemData.itemShops.Length];
         itemShops = ItemData.itemShops;
         StartCoroutine(LoadDataUser());
@@ -31,10 +44,11 @@ public class UserManager : TemporaryMonoSingleton<UserManager>
                 },
                 (error) =>
                 {
-                    Debug.Log(error);
+                    playfabManager.SavePlayerData(key, itemShops[i].count.ToString());
                 });
             yield return new WaitForSeconds(0.5f);
         }
+        SceneManager.HideLoading();
     }
 
     public static int GetPriceItem(ItemType itemType)
