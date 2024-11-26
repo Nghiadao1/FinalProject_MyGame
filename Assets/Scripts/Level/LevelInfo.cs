@@ -22,6 +22,10 @@ public class LevelInfo : MonoBehaviour
     }
     public void OnSelectLevel()
     {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
         LevelManager.levelIndex = levelIndex;
     }
 }

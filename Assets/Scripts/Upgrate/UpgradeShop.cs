@@ -26,9 +26,9 @@ public class UpgradeShop : MonoBehaviour
     {
         price = GetPriceUpgrade(upgradeType);
         value = GetValueUpgrade(upgradeType);
-        UpdateData();
+        UpdadeData();
     }
-    private void UpdateData()
+    private void UpdadeData()
     {
         data = GetDataUpgrade(upgradeType);
         _currentValue = data;
@@ -46,7 +46,7 @@ public class UpgradeShop : MonoBehaviour
         if (coin < price) return;
         OnUpgrade(-price);
         UpgradeManager.UpdateValueUpgrade(upgradeType, value);
-        UpdateData();
+        UpdadeData();
     }
 }
 

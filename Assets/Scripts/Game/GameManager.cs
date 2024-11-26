@@ -23,11 +23,13 @@ public class GameManager : TemporaryMonoSingleton<GameManager>
     }
     public void OnDefeat()
     {
+        Time.timeScale = 0;
         EndGamePopup.endGamePopupType = EndGamePopupType.Defeat;
         SceneManager.ShowPopup(Scene.EndGamePopup);
     }
     public void OnComplete()
     {
+        Time.timeScale = 0;
         EndGamePopup.endGamePopupType = EndGamePopupType.Complete;
         SceneManager.ShowPopup(Scene.EndGamePopup);
     }

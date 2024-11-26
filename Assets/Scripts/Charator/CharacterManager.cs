@@ -95,7 +95,6 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
     
     private void Move()
     {
-        //Jump(isJump);
         if(isAttack) return;
         Run(_x, isMove);
     }
@@ -210,6 +209,7 @@ public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
 
     private void ShowDefeatPopup()
     {
+        // pause game and show defeat popup
         GameManager.Instance.OnDefeat();
     }
 

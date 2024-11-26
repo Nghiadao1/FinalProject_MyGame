@@ -27,11 +27,9 @@ public class PlayfabConnect : TemporaryMonoSingleton<PlayfabConnect>
         userName = username;
         passWord = password;
         this.email = email;
-        if (string.IsNullOrEmpty(PlayFabSettings.staticSettings.TitleId)){
-            PlayFabSettings.staticSettings.TitleId = "40";
-        }
-        var request = new LoginWithPlayFabRequest {Username = username, Password = password};
-        PlayFabClientAPI.LoginWithPlayFab(request, OnLoginSuccess, OnLoginFailure);
+        var request = new RegisterPlayFabUserRequest {Username = userName, Email = this.email, Password = passWord};
+        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnRegisterFailure);
+     
     }
 
     private void OnLoginSuccess(LoginResult result)
@@ -48,11 +46,10 @@ public class PlayfabConnect : TemporaryMonoSingleton<PlayfabConnect>
         Debug.LogError(error.GenerateErrorReport());
         isLogin = false;
         //creat account by user name pass word
-        if(error.Error == PlayFabErrorCode.AccountNotFound)
-        {
-            var request = new RegisterPlayFabUserRequest {Username = userName, Email = email, Password = passWord};
-            PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnRegisterFailure);
-        }
+        SceneManager.HideLoading();
+        SceneManager.ShowPopup(Scene.Login);
+        isLoginFailed = !isLogin;
+        
     }
     
     private void OnRegisterSuccess(RegisterPlayFabUserResult result)

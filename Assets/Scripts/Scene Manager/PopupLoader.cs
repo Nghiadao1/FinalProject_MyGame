@@ -10,6 +10,7 @@ public class PopupLoader : MonoBehaviour
     public void ShowPopup()
     {
         //ClosePopup();
+        Debug.Log("Show Popup");
         SceneManager.ShowPopup(targetScene);
     }
     public void ShowPopup(Scene scene)
