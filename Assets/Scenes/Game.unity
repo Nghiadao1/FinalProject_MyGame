@@ -1878,6 +1878,7 @@ GameObject:
   - component: {fileID: 1299444437}
   - component: {fileID: 1299444436}
   - component: {fileID: 1299444435}
+  - component: {fileID: 1299444438}
   m_Layer: 5
   m_Name: Hp bottle
   m_TagString: Untagged
@@ -1956,6 +1957,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299444433}
   m_CullTransparentMesh: 1
+--- !u!114 &1299444438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299444433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1299444435}
+          m_TargetAssemblyTypeName: HPBottleText, Assembly-CSharp
+          m_MethodName: UseHpBottle
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1374921848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,6 +2827,7 @@ GameObject:
   - component: {fileID: 2104650235}
   - component: {fileID: 2104650234}
   - component: {fileID: 2104650236}
+  - component: {fileID: 2104650237}
   m_Layer: 5
   m_Name: Time Items
   m_TagString: Untagged
@@ -2875,6 +2906,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeItemText: {fileID: 1654113777}
+--- !u!114 &2104650237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104650231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2104650236}
+          m_TargetAssemblyTypeName: TimeItems, Assembly-CSharp
+          m_MethodName: UseTimeItem
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &953358768449970226
 PrefabInstance:
   m_ObjectHideFlags: 0

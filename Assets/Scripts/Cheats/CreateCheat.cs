@@ -10,8 +10,7 @@ public class CreateCheat : GenericSingleton<CreateCheat>
     // Update is called once per frame
     void Update()
     {
-        //if ckick "c" key 5 times open popup popupLoader
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             popupLoader.ShowPopup();
         }
