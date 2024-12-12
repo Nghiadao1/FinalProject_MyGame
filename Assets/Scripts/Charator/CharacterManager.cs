@@ -2,109 +2,237 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.Serialization;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
-public class CharacterManager : MonoBehaviour
+public class CharacterManager : TemporaryMonoSingleton<CharacterManager>
 {
+    //Events
+    public static Action<int> OnTakeDame = delegate {  };
+    //Singleton
+    private AnimationCharactor _animationCharactor => AnimationCharactor.Instance;
+    private CharactorControl _charactorControl => CharactorControl.Instance;
     //Components
-    private Rigidbody2D _rb;
+    [SerializeField]private Rigidbody2D rb;
     [SerializeField] private GameObject character;
-    private Move _move;
-    
+    [SerializeField] private GameObject attackHit;
+    [SerializeField] private LayerMask groundLayer;
     //Character info
-    public CharacterInfo _characterInfo;
-    public float jumpForce
-    {
-        get => _characterInfo.jumpForce;
-        set => _characterInfo.jumpForce = value;
-    }
-    public float speed
-    {
-        get => _characterInfo.speed;
-        set => _characterInfo.speed = value;
-    }
-    public int health
-    {
-        get => _characterInfo.health;
-        set => _characterInfo.health = value;
-    }
-    public int attackPoint
-    {
-        get => _characterInfo.attackPoint;
-        set => _characterInfo.attackPoint = value;
-    }
-    public float distanceJump
-    {
-        get => _characterInfo.distanceJump;
-        set => _characterInfo.distanceJump = value;
-    }
+    private CharactorInfo charactorInfo => CharactorInfo.Instance;
+    private UpgradeManager _upgradeManager => UpgradeManager.Instance;
+    private int healthUpgrade => UpgradeManager.GetDataUpgrade(UpgradeType.health);
+    private int atackUpgrade => UpgradeManager.GetDataUpgrade(UpgradeType.attackPoint);
+    private int shieldUpgrade => UpgradeManager.GetDataUpgrade(UpgradeType.DEF);
+    public float jumpForce;
+    public float speed;
+    public int health;
+    public int attackPoint;
+
+    public float distanceJump;
+    public int shield;
 
     //Stage Character
     public bool isGrounded;
-    
-    private void Start()
+    private float _x = 1;
+    public bool isMove;
+    public bool isJump;
+    public bool isAttack;
+    public bool isHit;
+    public bool isDead;
+    private void OnEnable()
     {
+        
         Init();
+        ActiveEvent();
     }
-
+    private void OnDisable()
+    {
+        DeActiveEvent();
+    }
+    private Button _hitButton => _charactorControl.HitButon;
     private void Update()
     {
-        IsGrounded();
+        if(isHit || isDead) return;
         Move();
+        CheckIdle();
+        Attack(isAttack);
     }
 
     private void Init()
     {
-         _rb = character.GetComponent<Rigidbody2D>();
-         _move = character.GetComponent<Move>();
+        InitInfo();
+        isGrounded = true;
+        isDead = false;
+        _animationCharactor.SetAnimation();
     }
+    private void InitInfo()
+    {
+        charactorInfo.SetDataDefault();
+        jumpForce = charactorInfo.jumpForce;
+        speed = charactorInfo.speed;
+        health = charactorInfo.health;
+        attackPoint = charactorInfo.attackPoint + atackUpgrade;
+        health =(charactorInfo.health + healthUpgrade);
+    }
+    private void ActiveEvent()
+    {
+        CharactorControl.OnMove += Run;
+        CharactorControl.OnJump += Jump;
+        CharactorControl.OnAttack += Attack;
+        HPBottleText.OnUseHPBottle += UseHealthPotion;
+        Skill.OnActiveSkill += AttackSkill;
+    }
+    private void DeActiveEvent()
+    {
+        CharactorControl.OnMove -= Run;
+        CharactorControl.OnJump -= Jump;
+        CharactorControl.OnAttack -= Attack;
+        HPBottleText.OnUseHPBottle -= UseHealthPotion;
+        Skill.OnActiveSkill -= AttackSkill;
+    }
+    
     private void Move()
     {
-        Jump();
-        Run();
+        if(isAttack) return;
+        Run(_x, isMove);
     }
 
-    private void Run()
+    private void Run(float x, bool isMove)
     {
+        if (!isMove)
+        {
+            this.isMove = false;
+            IsGrounded();
+            return;
+        }
+        _x = x;
+        this.isMove = true;
         var direction = Vector3.zero;
-        if (Input.GetKey(KeyCode.A))
-        {
-            direction += Vector3.left;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            direction += Vector3.right;
-        }
+        if (StartMove(ref direction, x)) return;
+    }
+
+    private bool StartMove(ref Vector3 direction, float x)
+    {
+        direction += new Vector3(x,0,0);
+        FlipFollowDirection(x);
+        UpdateTransform(direction);
+        if(!isGrounded) return true;
+        _animationCharactor.UpdateAnimation(StageState.Run);
+        return false;
+    }
+
+    private void UpdateTransform(Vector3 direction)
+    {
         character.transform.position += direction * speed * Time.deltaTime;
     }
 
-    private void Jump()
+    private void FlipFollowDirection(float x)
     {
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        character.transform.localScale = new Vector3(x, 1, 1);
+    }
+
+    public void Jump(bool isJump)
+    {
+        if (!isJump || !isGrounded) return;
+        isGrounded = false;
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        _animationCharactor.UpdateAnimation(StageState.Jump);
+    }
+
+    private void Attack(bool isAttack)
+    {
+        if (!isAttack) return;
+        _hitButton.interactable = false;
+        this.isAttack = true;
+        _animationCharactor.UpdateAnimation(StageState.Attack);
+        attackHit.SetActive(true);
+    }
+    private void AttackSkill(Animator attackSkill, Transform staTransform, int skillStrength)
+    {
+        Attack(true);
+        attackSkill.SetBool("IsHitAttackSkill", true);
+        //using dotween to move attackhit forward and return old position
+        attackHit.transform.DOMoveX( (character.transform.position.x + _x * skillStrength), 0.5f).OnComplete(() =>
         {
-            _move.Jump(jumpForce, _rb, isGrounded);
-        }
+            attackSkill.SetBool("IsHitAttackSkill", false);
+            attackHit.SetActive(false);
+            attackHit.transform.position = staTransform.position;
+        });
+    }
+   
+    public void EndAttack()
+    {
+        IsGrounded();
+        _animationCharactor.SetAnimation();
+        isAttack = false;
+        attackHit.SetActive(false);
+        _hitButton.interactable = true;
     }
 
     private bool CheckIsGrounded()
     {
-        //check if the character is on the ground
-        var hit = Physics2D.Raycast(transform.position, Vector2.down, distanceJump);
+        // check if the player is grounded with tag "Ground"
+        var hit = Physics2D.Raycast(character.transform.position, Vector2.down, distanceJump, groundLayer);
         return hit.collider != null;
     }
-    private void IsGrounded()
+    public void IsGrounded()
     {
         isGrounded = CheckIsGrounded();
+        _animationCharactor.UpdateAnimation(isGrounded ? StageState.Idle : StageState.Jump);
+    }
+    private void CheckIdle()
+    {
+        if (isGrounded && !isMove && !isAttack)
+        {
+            _animationCharactor.UpdateAnimation(StageState.Idle);
+        }
+    }
+    
+    public void TakeDame()
+    {
+        health -= 10;
+        if (health <= 0)
+        {
+            health = 0;
+            isDead = true;
+            _animationCharactor.UpdateAnimation(StageState.Dead);
+            //ShowDefeatPopup();
+        }
+        OnTakeDame?.Invoke(health);
+        if(health <= 0) return;
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce*0.8f); 
+        //disable collider for 0.5s
+        StartCoroutine(DelayHit());
     }
 
+    private void ShowDefeatPopup()
+    {
+        // pause game and show defeat popup
+        GameManager.Instance.OnDefeat();
+    }
+
+    private IEnumerator DelayHit()
+    {
+        isHit = true;
+        _animationCharactor.UpdateAnimation(StageState.Hit);
+        yield return new WaitForSeconds(0.5f);
+        isHit = false;
+        EndAttack();
+    }
+    private void UseHealthPotion()
+    {
+        var healthMax = charactorInfo.health + healthUpgrade;
+        health += 50;
+        if(health > healthMax) health = healthMax;
+        OnTakeDame?.Invoke(health);
+    }
+    
+    
 }
-[Serializable]
-public class CharacterInfo
-{
-     public float speed;
-     public float jumpForce;
-     public int health;
-     public int attackPoint;
-     public float distanceJump;
-}
+
+
+
+
+
